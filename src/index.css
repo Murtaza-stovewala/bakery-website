@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lilita+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Titan+One&display=swap'); */
+@import 'tailwindcss';
+@plugin 'lightswind/plugin';
+:root {
+  --color-brand-dark: #441D09;
+  --color-brand-rose: #AF1545;
+  --color-accent-pink: #E0678B;
+  --color-background: #FFF9F5;
+  --color-soft-pink: #FCE2E9;
+  --color-white: #FFFFFF;
+  --color-muted-accent: #D6B5BD;
+
+  --radius-pill: 999px;
+
+  --font-heading: "Lilita One", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-brand-dark);
+}

@@ -1,0 +1,30 @@
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 142px;
+  height: 44px;
+  padding: 11px 24px;
+
+  border: 2px solid var(--color-brand-dark);
+  border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;
+
+  background-color: var(--color-soft-pink);
+  color: var(--color-brand-dark);
+
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--color-brand-dark);
+}
