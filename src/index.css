@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Titan+One&display=swap'); */
 @import 'tailwindcss';
 @plugin 'lightswind/plugin';
@@ -13,9 +14,15 @@
 
   --radius-pill: 999px;
 
-  --font-heading: "Lilita One", sans-serif;
+  /* --font-heading: "Lilita One", sans-serif;*/
   --font-body: "DM Sans", sans-serif;
+    --font-heading: "Bowlby One SC", sans-serif;
+  /* --font-body: "Plus Jakarta Sans", sans-serif; */
 }
+/* :root {
+  --font-heading: "Bowlby One SC", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+} */
 
 * {
   margin: 0;
