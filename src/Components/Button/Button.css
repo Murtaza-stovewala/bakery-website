@@ -1,4 +1,4 @@
-.custom-button {
+/* .custom-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -22,9 +22,46 @@
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+} 
+    */
+    .custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 178px;
+  height: 54px;
+  padding: 12px 30px;
+
+  border: 2px solid var(--color-brand-dark);
+  border-radius: 999px;
+
+  background-color: var(--color-soft-pink);
+  color: var(--color-brand-dark);
+
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-radius 0.2s ease;
 }
 
 .custom-button:hover {
   transform: translateY(-2px);
-  box-shadow: 3px 3px 0 var(--color-brand-dark);
+
+  /* cake-like base/shadow effect */
+  border-radius: 16px 16px 12px 12px;
+  box-shadow: 5px 6px 0 var(--color-brand-dark);
 }
+
+/* .custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--color-brand-dark);
+} */

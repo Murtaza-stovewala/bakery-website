@@ -1,6 +1,7 @@
 import Button from '../../../../Components/Button/Button';
 import "./Featured.css";
 import featured_img from '../../../../assets/Featured.png';
+import featured_img2 from '../../../../assets/Featured2.png';
 
 export default function Featured() {
   return (
@@ -11,43 +12,54 @@ export default function Featured() {
         {/* LEFT - Featured Cake Image */}
         <div className="featured-image">
 
+          {/* FAMILY FUN WHEEL */}
           <div className="featured-decoration">
-            <svg viewBox="0 0 160 160">
-              <defs>
-                <path
-                  id="featured-circle-path"
-                  d="
-          M 80,80
-          m -58,0
-          a 58,58 0 1,1 116,0
-          a 58,58 0 1,1 -116,0
-        "
+
+            <div className="featured-decoration-circle">
+
+              <svg viewBox="0 0 120 120">
+                <defs>
+                  <path
+                    id="featured-circle-path"
+                    d="
+                      M 60,60
+                      m -47,0
+                      a 47,47 0 1,1 94,0
+                      a 47,47 0 1,1 -94,0
+                    "
+                  />
+                </defs>
+
+                <text>
+                  <textPath
+                    href="#featured-circle-path"
+                    startOffset="50%"
+                    textAnchor="middle"
+                    textLength="275"
+                    lengthAdjust="spacingAndGlyphs"
+                  >
+                    FAMILY FUN FOR THE WHOLE FAMILY 
+                  </textPath>
+                </text>
+
+              </svg>
+
+              <div className="featured-decoration-center">
+                <img
+                  src="/src/assets/cookie.png"
+                  alt="Cookie"
                 />
-              </defs>
+              </div>
 
-              <text>
-                <textPath
-                  href="#featured-circle-path"
-                  startOffset="50%"
-                  textAnchor="middle"
-                  textLength="340"
-                  lengthAdjust="spacingAndGlyphs"
-                >
-                  FAMILY FUN FOR THE WHOLE FAMILY
-                </textPath>
-              </text>
-            </svg>
-
-            <div className="featured-decoration-center">
-              🍪
             </div>
+
           </div>
 
           <div className="featured-image-bg"></div>
 
           <img
             src={featured_img}
-            alt="Custom Spider-Man birthday cake"
+            alt="Cup Cakes"
           />
 
         </div>
@@ -59,12 +71,11 @@ export default function Featured() {
           <div className="featured-heading">
 
             <h2>
-              YOUR ONLY
+              MADE FOR
               <br />
-              DOSE OF DELIGHT
+              YOUR MOMENTS
             </h2>
 
-            <span className="heading-decoration">🍪</span>
 
           </div>
 
@@ -80,7 +91,7 @@ export default function Featured() {
 
               <div className="product-preview">
                 <img
-                  src={featured_img}
+                  src={featured_img2}
                   alt="Featured custom cake"
                 />
               </div>
@@ -93,17 +104,14 @@ export default function Featured() {
               <div className="product-divider"></div>
 
               <div className="product-price">
-                ₹1,200
+                ₹500
               </div>
 
             </div>
 
 
             <p className="featured-description">
-              Celebrate your special moments with a custom-made
-              cake designed especially for you. Choose your favorite
-              characters, colors, and ideas and bring your celebration
-              to life.
+              Make every celebration a little sweeter with a custom cake made just for you. Choose your design, colors, flavors, and details — we’ll turn your idea into something deliciously special.
             </p>
 
           </div>

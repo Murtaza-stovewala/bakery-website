@@ -1,22 +1,22 @@
 .featured {
   width: 100%;
-  padding: 80px 60px;
+  padding: 70px 50px;
   background-color: var(--color-main-bg);
 }
 
 .featured-content {
-  max-width: 1200px;
+  max-width: 1250px;
   min-height: 560px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: center;
-  gap: 70px;
+  gap: 65px;
 }
 
 .featured-image {
   position: relative;
-  min-height: 520px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,62 +38,134 @@
   max-width: 500px;
   height: auto;
   display: block;
+  border-radius: 28px;
 }
+
+
+/* =========================================
+   FAMILY FUN WHEEL
+   ========================================= */
 
 .featured-decoration {
   position: absolute;
-  top: 35px;
-  left: 0;
-  width: 160px;
-  height: 160px;
-  z-index: 2;
-}
 
-.featured-decoration svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  animation: featured-spin 14s linear infinite;
-  transform-origin: center;
-}
+  /*
+    Position it over the bottom-right
+    corner of the image.
+  */
+  right: -20px;
+  bottom: -10px;
 
-.featured-decoration text {
-  fill: var(--color-brand-dark);
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+  width: 190px;
+  height: 190px;
 
-.featured-decoration-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 58px;
-  height: 58px;
-  transform: translate(-50%, -50%);
+  z-index: 5;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  pointer-events: none;
+}
+
+
+/*
+  Yellow circle
+*/
+.featured-decoration-circle {
+  position: relative;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
+
   border-radius: 50%;
   background-color: #f5d91f;
-  font-size: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*
+  Text around the cookie
+*/
+.featured-decoration-circle svg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  transform: none;
+}
+
+
+/*
+  Wheel text
+*/
+.featured-decoration-circle text {
+  fill: var(--color-brand-dark);
+
+  font-family: var(--font-heading);
+
+  font-size: 12px;
+  font-weight: 300; 
+  margin-top: 10px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/*
+  Cookie in the center
+*/
+.featured-decoration-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 58px;
+  height: 58px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f5d91f;
+
   z-index: 3;
 }
 
-@keyframes featured-spin {
-  from {
-    transform: rotate(0deg);
-  }
 
-  to {
-    transform: rotate(360deg);
-  }
+/*
+  Cookie image
+*/
+.featured-decoration-center img {
+  width: 58px;
+  height: 58px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
 }
 
+
+/* =========================================
+   HEADING COOKIE
+   ========================================= */
+
 .featured-text {
-  max-width: 560px;
+  max-width: 590px;
 }
 
 .featured-heading {
@@ -103,32 +175,41 @@
 
 .featured-text h2 {
   margin: 0;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-heading);
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 0.98;
+
+  font-size: clamp(46px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 0.94;
+
   text-transform: uppercase;
+
+  letter-spacing: -0.5px;
 }
 
-.heading-decoration {
-  position: absolute;
-  top: -20px;
-  right: -55px;
-  font-size: 42px;
-  transform: rotate(-10deg);
-}
+
+
+/* =========================================
+   FEATURED PRODUCT
+   ========================================= */
 
 .featured-item {
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 .featured-label {
   margin: 0 0 18px;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 700;
+
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .featured-product {
@@ -140,85 +221,183 @@
 .product-preview {
   width: 115px;
   height: 80px;
+
   overflow: hidden;
+
   border-radius: 18px;
+
   background-color: #f2eee9;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-shrink: 0;
 }
 
 .product-preview img {
   width: 145px;
   height: 145px;
+
   object-fit: contain;
+
+  border-radius: 0;
 }
 
 .product-info {
-  min-width: 160px;
+  min-width: 170px;
 }
 
 .product-info h3 {
   margin: 0;
+
   color: var(--color-brand-dark);
-  font-family: var(--font-body);
+
+  font-family: var(--font-heading);
+
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
+
+  white-space: nowrap;
 }
 
 .product-info p {
   margin: 5px 0 0;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-body);
+
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .product-divider {
   width: 2px;
-  height: 42px;
+  height: 45px;
+
   background-color: var(--color-brand-dark);
+
   opacity: 0.7;
+
+  flex-shrink: 0;
 }
 
 .product-price {
   color: var(--color-brand-dark);
+
   font-family: var(--font-heading);
+
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 400;
+
   white-space: nowrap;
 }
 
 .featured-description {
-  max-width: 470px;
-  margin: 28px 0 30px;
+  max-width: 500px;
+
+  margin: 30px 0 30px;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-body);
+
   font-size: 17px;
-  font-weight: 600;
-  line-height: 1.5;
+  font-weight: 400;
+
+  line-height: 1.55;
 }
 
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1050px) {
+
+  .featured {
+    padding: 60px 35px;
+  }
+
+  .featured-content {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 45px;
+  }
+
+  .featured-image {
+    min-height: 460px;
+  }
+
+  .featured-image img {
+    max-width: 440px;
+  }
+
+  .featured-image-bg {
+    width: 300px;
+    height: 350px;
+  }
+
+  .featured-decoration {
+    right: -15px;
+    bottom: -5px;
+  }
+
+  .featured-text h2 {
+    font-size: 46px;
+  }
+
+
+  .featured-product {
+    gap: 16px;
+  }
+
+  .product-info {
+    min-width: 150px;
+  }
+
+  .product-info h3 {
+    font-size: 18px;
+  }
+
+  .product-price {
+    font-size: 27px;
+  }
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+   ========================================= */
+
 @media (max-width: 900px) {
+
   .featured {
     padding: 60px 30px;
   }
 
   .featured-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 35px;
+
     text-align: center;
   }
 
   .featured-image {
     order: 1;
+
     min-height: 450px;
   }
 
+  .featured-image img {
+    max-width: 460px;
+  }
+
   .featured-text {
-    max-width: 600px;
+    max-width: 620px;
+
     margin: 0 auto;
+
     order: 2;
   }
 
@@ -235,69 +414,113 @@
     margin-right: auto;
   }
 
+  /*
+    Keep wheel attached to
+    bottom-right of image.
+  */
   .featured-decoration {
-    left: 50%;
-    transform: translateX(-190px);
+    right: 5%;
+    bottom: -5px;
+
+    transform: none;
   }
 }
 
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
 @media (max-width: 600px) {
+
   .featured {
     padding: 50px 20px;
   }
 
   .featured-content {
     min-height: auto;
+
     gap: 30px;
   }
 
   .featured-image {
-    min-height: 380px;
+    min-height: 370px;
   }
 
   .featured-image-bg {
-    width: 260px;
-    height: 300px;
+    width: 255px;
+    height: 295px;
+
+    border-radius: 0 0 24px 24px;
   }
 
   .featured-image img {
-    max-width: 370px;
+    max-width: 365px;
+
+    border-radius: 24px;
   }
 
+
+  /* Smaller wheel on mobile */
+
   .featured-decoration {
-    width: 110px;
-    height: 110px;
-    top: 30px;
-    transform: translateX(-150px);
+    width: 125px;
+    height: 125px;
+
+    right: -5px;
+    bottom: -5px;
+  }
+
+  .featured-decoration-circle {
+    width: 92px;
+    height: 92px;
+  }
+
+  .featured-decoration-circle text {
+    font-size: 7px;
+    letter-spacing: 0.8px;
   }
 
   .featured-decoration-center {
-    width: 42px;
-    height: 42px;
-    font-size: 19px;
+    width: 40px;
+    height: 40px;
   }
 
-  .featured-decoration text {
-    font-size: 9px;
-    letter-spacing: 1.5px;
+  .featured-decoration-center img {
+    width: 32px;
+    height: 32px;
   }
+
 
   .featured-text h2 {
-    font-size: 38px;
+    font-size: 37px;
+
+    line-height: 0.95;
   }
 
-  .heading-decoration {
-    right: -35px;
-    font-size: 30px;
+
+  .featured-item {
+    margin-top: 25px;
+  }
+
+  .featured-label {
+    font-size: 15px;
   }
 
   .featured-product {
-    gap: 12px;
+    gap: 10px;
   }
 
   .product-preview {
-    width: 90px;
-    height: 65px;
+    width: 85px;
+    height: 62px;
+
+    border-radius: 14px;
+  }
+
+  .product-preview img {
+    width: 115px;
+    height: 115px;
   }
 
   .product-info {
@@ -305,22 +528,28 @@
   }
 
   .product-info h3 {
-    font-size: 16px;
+    font-size: 15px;
+
+    white-space: normal;
   }
 
   .product-info p {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .product-divider {
-    height: 32px;
+    height: 30px;
   }
 
   .product-price {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .featured-description {
+    margin-top: 25px;
+
     font-size: 15px;
+
+    line-height: 1.5;
   }
 }
