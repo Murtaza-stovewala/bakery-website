@@ -35,10 +35,10 @@ export default function Featured() {
                     href="#featured-circle-path"
                     startOffset="50%"
                     textAnchor="middle"
-                    textLength="275"
+                    textLength="289"
                     lengthAdjust="spacingAndGlyphs"
                   >
-                    FAMILY FUN FOR THE WHOLE FAMILY 
+                    <span>•</span> FAMILY FUN FOR THE WHOLE FAMILY • <span>•</span>
                   </textPath>
                 </text>
 

@@ -1,3 +1,51 @@
+Absolutely. In fact, **“Learn Baking” would be misleading** if the bakery doesn't actually teach baking.
+
+We can keep the exact visual concept but change the message to something that actually promotes the bakery.
+
+### My preferred direction
+
+**Heading:**
+
+> WHY IS BAKING
+> CONSIDERED
+> AS ART
+> FORM?
+
+Then the paragraph can talk about your bakery's approach:
+
+> **Every bake is made with care, creativity and a little bit of love. From the perfect texture to the final decoration, we believe every creation deserves to be enjoyed as much as it deserves to be admired.**
+
+And change the button to:
+
+**`• VISIT OUR INSTAGRAM`**
+
+This works particularly well because Instagram can show:
+
+* New cakes
+* Custom orders
+* Behind-the-scenes baking
+* Customer orders
+* Decorations
+* Seasonal products
+
+### Other button options
+
+| Button                     | Feel                    |
+| -------------------------- | ----------------------- |
+| **VISIT OUR INSTAGRAM**    | ⭐ Best for your purpose |
+| **SEE OUR CREATIONS**      | More premium            |
+| **EXPLORE OUR BAKES**      | Friendly                |
+| **FOLLOW OUR JOURNEY**     | More brand-focused      |
+| **VIEW MORE ON INSTAGRAM** | Very clear              |
+
+I would personally go with **`VISIT OUR INSTAGRAM`**.
+
+And we **don't need to change the visual design** from your reference. The dark-brown card + large image + artistic heading actually fits a bakery brand very nicely. We just repurpose the content so it sells the **brand and products**, rather than pretending you're a baking school.
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
 Yes. Now that I can see your **actual menu + the product section**, I would change the product cards to represent your **real products**, rather than generic bakery items from the Lovable demo.
 
 ### What I would show in this section

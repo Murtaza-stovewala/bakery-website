@@ -1,3 +1,7 @@
+/* =========================================
+   FEATURED SECTION
+========================================= */
+
 .featured {
   width: 100%;
   padding: 70px 50px;
@@ -8,15 +12,24 @@
   max-width: 1250px;
   min-height: 560px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: center;
+
   gap: 65px;
 }
 
+
+/* =========================================
+   FEATURED IMAGE
+========================================= */
+
 .featured-image {
   position: relative;
+
   min-height: 500px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,35 +37,38 @@
 
 .featured-image-bg {
   position: absolute;
+
   width: 330px;
   height: 380px;
+
   background-color: #a9dfe8;
+
   border-radius: 0 0 28px 28px;
+
   z-index: 0;
 }
 
 .featured-image img {
   position: relative;
   z-index: 1;
+
   width: 100%;
   max-width: 500px;
   height: auto;
+
   display: block;
+
   border-radius: 28px;
 }
 
 
 /* =========================================
    FAMILY FUN WHEEL
-   ========================================= */
+========================================= */
 
 .featured-decoration {
   position: absolute;
 
-  /*
-    Position it over the bottom-right
-    corner of the image.
-  */
   right: -20px;
   bottom: -10px;
 
@@ -68,17 +84,16 @@
   pointer-events: none;
 }
 
-
-/*
-  Yellow circle
-*/
 .featured-decoration-circle {
   position: relative;
-  padding: 20px;
+
   width: 150px;
   height: 150px;
 
+  padding: 20px;
+
   border-radius: 50%;
+
   background-color: #f5d91f;
 
   display: flex;
@@ -86,10 +101,6 @@
   justify-content: center;
 }
 
-
-/*
-  Text around the cookie
-*/
 .featured-decoration-circle svg {
   position: absolute;
 
@@ -99,31 +110,21 @@
   height: 100%;
 
   overflow: visible;
-
-  transform: none;
 }
 
-
-/*
-  Wheel text
-*/
 .featured-decoration-circle text {
   fill: var(--color-brand-dark);
 
   font-family: var(--font-heading);
 
   font-size: 12px;
-  font-weight: 300; 
-  margin-top: 10px;
+  font-weight: 300;
+
   letter-spacing: 2px;
 
   text-transform: uppercase;
 }
 
-
-/*
-  Cookie in the center
-*/
 .featured-decoration-center {
   position: absolute;
 
@@ -146,10 +147,6 @@
   z-index: 3;
 }
 
-
-/*
-  Cookie image
-*/
 .featured-decoration-center img {
   width: 58px;
   height: 58px;
@@ -161,8 +158,8 @@
 
 
 /* =========================================
-   HEADING COOKIE
-   ========================================= */
+   FEATURED TEXT
+========================================= */
 
 .featured-text {
   max-width: 590px;
@@ -192,10 +189,9 @@
 }
 
 
-
 /* =========================================
    FEATURED PRODUCT
-   ========================================= */
+========================================= */
 
 .featured-item {
   margin-top: 32px;
@@ -212,11 +208,27 @@
   font-weight: 400;
 }
 
+
+/* =========================================
+   PRODUCT ROW
+========================================= */
+
 .featured-product {
+  width: 100%;
+
   display: flex;
   align-items: center;
+
   gap: 22px;
 }
+
+.product-preview {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   PRODUCT PREVIEW
+========================================= */
 
 .product-preview {
   width: 115px;
@@ -244,12 +256,30 @@
   border-radius: 0;
 }
 
-.product-info {
+
+/* =========================================
+   FEATURED PRODUCT INFO
+   Isolated from ProductCard styles
+========================================= */
+
+.featured .product-info {
+  position: static;
   min-width: 170px;
+  flex: 1;
+
+  margin: 0;
+  padding: 0;
+
+  display: block;
 }
 
-.product-info h3 {
+.featured .product-info h3 {
+  position: static;
+
+  display: block;
+
   margin: 0;
+  padding: 0;
 
   color: var(--color-brand-dark);
 
@@ -258,11 +288,18 @@
   font-size: 20px;
   font-weight: 400;
 
+  line-height: 1.1;
+
   white-space: nowrap;
 }
 
-.product-info p {
-  margin: 5px 0 0;
+.featured .product-info p {
+  position: static;
+
+  display: block;
+
+  margin: 7px 0 0;
+  padding: 0;
 
   color: var(--color-brand-dark);
 
@@ -270,20 +307,36 @@
 
   font-size: 15px;
   font-weight: 300;
+
+  line-height: 1.2;
+
+  white-space: normal;
 }
+
+
+/* =========================================
+   DIVIDER
+========================================= */
 
 .product-divider {
   width: 2px;
   height: 45px;
 
+  flex-shrink: 0;
+
   background-color: var(--color-brand-dark);
 
   opacity: 0.7;
-
-  flex-shrink: 0;
 }
 
+
+/* =========================================
+   PRICE
+========================================= */
+
 .product-price {
+  flex-shrink: 0;
+
   color: var(--color-brand-dark);
 
   font-family: var(--font-heading);
@@ -293,6 +346,11 @@
 
   white-space: nowrap;
 }
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .featured-description {
   max-width: 500px;
@@ -312,7 +370,7 @@
 
 /* =========================================
    TABLET
-   ========================================= */
+========================================= */
 
 @media (max-width: 1050px) {
 
@@ -322,6 +380,7 @@
 
   .featured-content {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
     gap: 45px;
   }
 
@@ -347,16 +406,15 @@
     font-size: 46px;
   }
 
-
   .featured-product {
     gap: 16px;
   }
 
-  .product-info {
+  .featured .product-info {
     min-width: 150px;
   }
 
-  .product-info h3 {
+  .featured .product-info h3 {
     font-size: 18px;
   }
 
@@ -368,7 +426,7 @@
 
 /* =========================================
    MOBILE / TABLET
-   ========================================= */
+========================================= */
 
 @media (max-width: 900px) {
 
@@ -378,6 +436,7 @@
 
   .featured-content {
     grid-template-columns: 1fr;
+
     gap: 35px;
 
     text-align: center;
@@ -414,10 +473,6 @@
     margin-right: auto;
   }
 
-  /*
-    Keep wheel attached to
-    bottom-right of image.
-  */
   .featured-decoration {
     right: 5%;
     bottom: -5px;
@@ -429,7 +484,7 @@
 
 /* =========================================
    SMALL MOBILE
-   ========================================= */
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -461,7 +516,9 @@
   }
 
 
-  /* Smaller wheel on mobile */
+  /* =========================================
+     SMALLER WHEEL
+  ========================================= */
 
   .featured-decoration {
     width: 125px;
@@ -492,12 +549,15 @@
   }
 
 
+  /* =========================================
+     TEXT
+  ========================================= */
+
   .featured-text h2 {
     font-size: 37px;
 
     line-height: 0.95;
   }
-
 
   .featured-item {
     margin-top: 25px;
@@ -507,7 +567,12 @@
     font-size: 15px;
   }
 
-  .featured-product {
+
+  /* =========================================
+     PRODUCT ROW
+  ========================================= */
+
+  /* .featured-product {
     gap: 10px;
   }
 
@@ -523,18 +588,22 @@
     height: 115px;
   }
 
-  .product-info {
+  .featured .product-info {
     min-width: 0;
   }
 
-  .product-info h3 {
+  .featured .product-info h3 {
     font-size: 15px;
+
+    line-height: 1.1;
 
     white-space: normal;
   }
 
-  .product-info p {
+  .featured .product-info p {
     font-size: 12px;
+
+    line-height: 1.2;
   }
 
   .product-divider {
@@ -543,7 +612,37 @@
 
   .product-price {
     font-size: 21px;
+  } */
+     .featured-product {
+    gap: 10px;
   }
+
+  .featured .product-info {
+    min-width: 0;
+    flex: 1;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .featured .product-info h3 {
+    position: static;
+
+    font-size: 15px;
+    line-height: 1.1;
+
+    white-space: normal;
+  }
+
+  .featured .product-info p {
+    position: static;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
 
   .featured-description {
     margin-top: 25px;

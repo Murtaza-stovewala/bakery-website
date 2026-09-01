@@ -1,0 +1,368 @@
+/* =========================================
+   BAKING FEATURE
+========================================= */
+
+.baking-feature {
+  width: 100%;
+  padding: 60px 50px;
+  background-color: var(--color-main-bg);
+}
+
+.baking-feature-conatainer {
+  position: relative;
+
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+  padding: 65px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 55px;
+
+  background-color: var(--color-brand-dark);
+  border-radius: 55px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.baking-feature-img {
+  width: 100%;
+  height: 550px;
+
+  overflow: hidden;
+
+  border-radius: 45px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.baking-feature-img img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.baking-feature-img:hover img {
+  transform: scale(1.02);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.baking-feature-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 540px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  /*
+    Keeps the content starting at
+    the same level as the image.
+  */
+  padding-top: 0;
+}
+
+
+/* =========================================
+   STAR
+========================================= */
+
+.baking-art-star {
+  width: 28px;
+  height: 28px;
+
+  margin-bottom: 15px;
+  margin-left: 20%;
+
+  color: #ff7435;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.baking-feature-content h2 {
+  max-width: 540px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 4.5vw, 70px);
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.baking-feature-content p {
+  max-width: 520px;
+
+  margin:  32px 0 32px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 400;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.baking-feature-content button {
+  margin-top: 42px;
+}
+
+.baking-feature-content button span {
+  margin-right: 8px;
+}
+
+
+/* =========================================
+   WHEAT DECORATIONS
+========================================= */
+
+.baking-art-wheat {
+  position: absolute;
+
+  color: rgba(255, 255, 255, 0.18);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* RIGHT WHEAT */
+
+.baking-art-wheat-right {
+  width: 105px;
+  height: 285px;
+
+  right: 20px;
+  top: 40px;
+}
+
+
+/* LEFT WHEAT */
+
+.baking-art-wheat-left {
+  width: 85px;
+  height: 210px;
+
+  left: -15px;
+  bottom: -10px;
+
+  transform: rotate(12deg);
+
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .baking-feature {
+    padding: 70px 35px;
+  }
+
+  .baking-feature-conatainer {
+    padding: 45px;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    border-radius: 45px;
+  }
+
+  .baking-feature-img {
+    height: 560px;
+  }
+
+  .baking-feature-content h2 {
+    font-size: clamp(42px, 5vw, 62px);
+  }
+
+  .baking-feature-content p {
+    font-size: 16px;
+  }
+
+  .baking-art-wheat-right {
+    width: 80px;
+    height: 230px;
+
+    right: 10px;
+    top: 30px;
+  }
+
+  .baking-art-wheat-left {
+    width: 65px;
+    height: 180px;
+
+    left: -10px;
+    bottom: -10px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .baking-feature {
+    padding: 55px 20px;
+  }
+
+  .baking-feature-conatainer {
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+
+    border-radius: 35px;
+  }
+
+  .baking-feature-img {
+    width: 100%;
+    height: 420px;
+
+    border-radius: 30px;
+  }
+
+  .baking-feature-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .baking-art-star {
+    width: 25px;
+    height: 25px;
+
+    margin-bottom: 18px;
+  }
+
+  .baking-feature-content h2 {
+    max-width: 100%;
+
+    font-size: 43px;
+    line-height: 0.92;
+  }
+
+  .baking-feature-content p {
+    max-width: 100%;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .baking-feature-content button {
+    margin-top: 32px;
+  }
+
+  .baking-art-wheat-right {
+    width: 65px;
+    height: 180px;
+
+    right: 0;
+    top: 15px;
+  }
+
+  .baking-art-wheat-left {
+    width: 55px;
+    height: 150px;
+
+    left: -5px;
+    bottom: -5px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .baking-feature {
+    padding: 45px 15px;
+  }
+
+  .baking-feature-conatainer {
+    padding: 20px;
+
+    border-radius: 28px;
+  }
+
+  .baking-feature-img {
+    height: 350px;
+
+    border-radius: 25px;
+  }
+
+  .baking-feature-content h2 {
+    font-size: 37px;
+  }
+
+  .baking-feature-content p {
+    font-size: 14px;
+  }
+
+  .baking-feature-content button {
+    margin-top: 30px;
+  }
+
+  .baking-art-wheat-right {
+    width: 55px;
+    height: 155px;
+  }
+
+  .baking-art-wheat-left {
+    width: 45px;
+    height: 130px;
+  }
+}
