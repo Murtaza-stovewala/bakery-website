@@ -1,28 +1,90 @@
+/* =========================================
+   PRODUCTS SECTION
+========================================= */
+
 .products {
   width: 100%;
   padding: 80px 50px;
   background-color: var(--color-main-bg);
 }
 
+
+/* =========================================
+   HEADER
+========================================= */
+
 .products-header {
   max-width: 1250px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 50px;
 }
 
 .products-title {
   max-width: 500px;
   margin: 0;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-heading);
+
   font-size: clamp(46px, 5vw, 68px);
+
   font-weight: 400;
+
   line-height: 0.94;
+
   text-transform: uppercase;
 }
+/* =========================================
+   PRODUCT DOODLES
+========================================= */
+
+.products-title-wrap {
+  position: relative;
+  max-width: 500px;
+}
+
+.products-title-squiggle {
+  position: absolute;
+
+  width: 110px;
+  height: auto;
+
+  right: 20px;
+  bottom: -28px;
+
+  color: var(--color-brand-dark);
+
+  transform: rotate(-8deg);
+
+  pointer-events: none;
+}
+
+.products-title-star {
+  position: absolute;
+
+  width: 28px;
+  height: 28px;
+
+  right: -35px;
+  top: 15px;
+
+  color: #f5d91f;
+
+  transform: rotate(12deg);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CATEGORY BUTTONS
+========================================= */
 
 .products-categories {
   margin: 0;
@@ -31,7 +93,9 @@
   list-style: none;
 
   display: grid;
+
   grid-template-columns: repeat(3, max-content);
+
   justify-content: end;
 
   gap: 12px 14px;
@@ -44,6 +108,7 @@
 
 .products-categories button {
   height: 52px;
+
   min-width: 0;
 
   padding: 6px 8px 6px 20px;
@@ -51,15 +116,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 18px;
 
   border: none;
+
   border-radius: 999px;
 
   color: var(--color-brand-dark);
 
   font-family: var(--font-heading);
+
   font-size: 20px;
+
   font-weight: 300;
 
   text-transform: uppercase;
@@ -71,7 +140,28 @@
     box-shadow 0.2s ease;
 }
 
-/* Individual colors */
+.products-categories-wrap {
+  position: relative;
+}
+
+.products-category-star {
+  position: absolute;
+
+  width: 22px;
+  height: 22px;
+
+  left: -35px;
+  bottom: 8px;
+
+  color: var(--color-brand-dark);
+
+  transform: rotate(-15deg);
+
+  pointer-events: none;
+}
+/* =========================================
+   CATEGORY COLORS
+========================================= */
 
 .products-categories li:nth-child(1) button {
   background-color: #e7e5e4;
@@ -89,16 +179,10 @@
   background-color: #e7dcdc;
 }
 
-.products-categories li:nth-child(5) button {
-  background-color: #a8dce5;
-}
 
-.products-categories li:nth-child(6) button {
-  background-color: #d8c3f4;
-}
-
-
-/* Count bubble */
+/* =========================================
+   CATEGORY COUNT
+========================================= */
 
 .category-count {
   width: 35px;
@@ -113,144 +197,530 @@
   border-radius: 999px;
 
   background-color: var(--color-brand-dark);
+
   color: white;
 
   font-family: var(--font-body);
+
   font-size: 13px;
+
   font-weight: 700;
 
   line-height: 1;
 }
 
 
-/* Hover */
+/* =========================================
+   CATEGORY HOVER
+========================================= */
 
 .products-categories button:hover {
   transform: translateY(-2px);
-  box-shadow: 3px 3px 0 var(--color-brand-dark);
+
+  box-shadow:
+    3px 3px 0 var(--color-brand-dark);
 }
 
-.products-list {
-  max-width: 1250px;
-  margin: 65px auto 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+
+/* =========================================
+   PRODUCT CAROUSEL
+========================================= */
+
+.products-carousel-wrapper {
+  width: 100%;
+  max-width: 1400px;
+
+  height: 500px;
+
+  margin: 20px auto 0;
+
+  position: relative;
+  overflow: hidden;
+
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.products-list article {
-  min-width: 0;
+
+/* =========================================
+   CAROUSEL STAGE
+========================================= */
+
+.products-carousel {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
 }
+
+
+/* =========================================
+   ALL SLIDES
+========================================= */
+
+.product-slide {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 380px;
+
+  /*
+    Base hidden position.
+    Hidden cards wait outside LEFT.
+  */
+
+  transform:
+    translate(-190%, -50%)
+    scale(0.55);
+
+  opacity: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  transition:
+    transform 1s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.8s ease;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================
+   CENTER
+========================================= */
+
+.product-slide.now {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  opacity: 1;
+
+  z-index: 5;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================
+   LEFT CARD
+========================================= */
+
+.product-slide.prev {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-145%, -50%)
+    scale(0.62);
+
+  opacity: 1;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   RIGHT CARD
+========================================= */
+
+.product-slide.next {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(45%, -50%)
+    scale(0.62);
+
+  opacity: 1;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   ENTER FROM LEFT
+========================================= */
+
+.product-slide.enter-left {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-190%, -50%)
+    scale(0.48);
+
+  opacity: 0;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   EXIT TO RIGHT
+========================================= */
+
+.product-slide.exit-right {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(150%, -50%)
+    scale(0.48);
+
+  opacity: 0;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   REVERSE:
+   ENTER FROM RIGHT
+========================================= */
+
+.product-slide.enter-right {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(150%, -50%)
+    scale(0.48);
+
+  opacity: 0;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   REVERSE:
+   EXIT TO LEFT
+========================================= */
+
+.product-slide.exit-left {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-190%, -50%)
+    scale(0.48);
+
+  opacity: 0;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   NORMAL HIDDEN CARDS
+========================================= */
+
+.product-slide.hidden {
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-190%, -50%)
+    scale(0.48);
+
+  opacity: 0;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   IMAGE CONTAINER
+========================================= */
 
 .image-container {
   width: 100%;
+
   aspect-ratio: 1 / 1;
+
   overflow: hidden;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   padding: 18px;
-  border-radius: 42% 58% 46% 54% / 54% 46% 56% 44%;
+
+  border-radius:
+    42% 58% 46% 54% /
+    54% 46% 56% 44%;
+
   background-color: #f5d91f;
-  transition: transform 0.3s ease;
 }
 
-.products-list article:nth-child(2) .image-container {
+
+/* =========================================
+   PRODUCT COLORS
+========================================= */
+
+.product-slide:nth-child(4n + 1)
+.image-container {
+  background-color: #f5d91f;
+}
+
+.product-slide:nth-child(4n + 2)
+.image-container {
   background-color: #a9dfe8;
 }
 
-.products-list article:nth-child(3) .image-container {
+.product-slide:nth-child(4n + 3)
+.image-container {
   background-color: #f4c9a8;
 }
 
-.products-list article:nth-child(4) .image-container {
+.product-slide:nth-child(4n + 4)
+.image-container {
   background-color: #e8d8ec;
 }
 
-.products-list article:hover .image-container {
-  transform: scale(1.02);
-}
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
 
 .image-container img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  border-radius: 36% 64% 44% 56% / 56% 42% 58% 44%;
+
+  border-radius:
+    36% 64% 44% 56% /
+    56% 42% 58% 44%;
+
   display: block;
+
   transition: transform 0.4s ease;
 }
 
-.products-list article:hover .image-container img {
-  transform: scale(1.03);
-}
+
+/* =========================================
+   PRODUCT INFO
+========================================= */
 
 .product-info {
   position: relative;
+
   margin-top: 18px;
+
   padding: 0 8px;
 }
 
 .product-info h2 {
   margin: 0;
+
   padding-right: 70px;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-heading);
+
   font-size: 21px;
+
   font-weight: 400;
+
   line-height: 1.05;
+
   text-transform: uppercase;
 }
 
 .product-info p {
   margin: 7px 0 0;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-body);
+
   font-size: 12px;
+
   font-weight: 400;
+
   letter-spacing: 0.1em;
+
   text-transform: uppercase;
 }
 
 .product-info h3 {
   position: absolute;
+
   top: 0;
   right: 8px;
+
   margin: 0;
+
   color: var(--color-brand-dark);
+
   font-family: var(--font-heading);
+
   font-size: 21px;
+
   font-weight: 400;
+
   line-height: 1;
 }
 
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.carousel-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  width: 52px;
+  height: 52px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-brand-dark);
+
+  border-radius: 50%;
+
+  background-color: var(--color-main-bg);
+
+  color: var(--color-brand-dark);
+
+  font-family: var(--font-body);
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================
+   ARROW HOVER
+========================================= */
+
+.carousel-arrow:hover {
+  background-color: var(--color-brand-dark);
+
+  color: white;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+
+/* =========================================
+   ARROW POSITIONS
+========================================= */
+
+.carousel-arrow-left {
+  left: 15px;
+}
+
+.carousel-arrow-right {
+  right: 15px;
+}
+
+
+/* =========================================
+   BOTTOM BUTTON
+========================================= */
+
 .products-button {
   max-width: 1250px;
+
   margin: 45px auto 0;
+
   display: flex;
+
   justify-content: center;
 }
 
+
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 1050px) {
+
   .products {
     padding: 70px 35px;
   }
 
   .products-header {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
   .products-categories {
     justify-content: flex-start;
+
     max-width: 700px;
   }
 
-  .products-list {
-    grid-template-columns: repeat(2, 1fr);
+  .products-carousel-wrapper {
+    height: 540px;
+  }
+
+  .product-slide {
+    width: 320px;
+  }
+
+  .product-slide.prev {
+    transform:
+      translate(-140%, -50%)
+      scale(0.56);
+  }
+
+  .product-slide.next {
+    transform:
+      translate(40%, -50%)
+      scale(0.56);
+  }
+
+  .product-slide.enter-left,
+  .product-slide.hidden {
+    transform:
+      translate(-180%, -50%)
+      scale(0.45);
+  }
+
+  .product-slide.exit-right {
+    transform:
+      translate(145%, -50%)
+      scale(0.45);
   }
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 600px) {
+
   .products {
     padding: 55px 20px;
   }
@@ -265,13 +735,58 @@
 
   .products-categories button {
     padding: 9px 13px;
+
     font-size: 11px;
   }
 
-  .products-list {
-    grid-template-columns: 1fr;
-    gap: 35px;
+  .products-carousel-wrapper {
+    height: 470px;
+
     margin-top: 45px;
+  }
+
+  .product-slide {
+    width: 75vw;
+  }
+
+  .product-slide.prev {
+    transform:
+      translate(-120%, -50%)
+      scale(0.42);
+  }
+
+  .product-slide.next {
+    transform:
+      translate(20%, -50%)
+      scale(0.42);
+  }
+
+  .product-slide.enter-left,
+  .product-slide.hidden {
+    transform:
+      translate(-155%, -50%)
+      scale(0.35);
+  }
+
+  .product-slide.exit-right {
+    transform:
+      translate(125%, -50%)
+      scale(0.35);
+  }
+
+  .carousel-arrow {
+    width: 42px;
+    height: 42px;
+
+    font-size: 21px;
+  }
+
+  .carousel-arrow-left {
+    left: 0;
+  }
+
+  .carousel-arrow-right {
+    right: 0;
   }
 
   .image-container {

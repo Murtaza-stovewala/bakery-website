@@ -1,14 +1,34 @@
-import { useState } from "react";
-import { img } from "../data";
+import { useEffect, useState } from "react";
 import { productsByCategory } from "../data";
 import "./Products.css";
-
+import ProductCard from "./ProductCard";
+import { Squiggle, StarSpark, WheatDoodle } from "../doodles";
 
 const cakeCategories = [
-  { id: 1, name: 'BROWNIES', count: 7, slug: 'brownies', tag: "brownies"},
-  { id: 2, name: 'BIRTHDAY CAKES', count: 12, slug: 'birthday-cakes', tag: "birthdayCakes" },
-  { id: 3, name: 'CUSTOM CAKES', count: 8, slug: 'custom-cakes', tag: "customCakes"  },
-  { id: 4, name: 'BENTO CAKES', count: 6, slug: 'bento-cakes', tag: "bentoCakes" },
+  {
+    id: 1,
+    name: "BROWNIES",
+    count: 7,
+    tag: "brownies",
+  },
+  {
+    id: 2,
+    name: "BIRTHDAY CAKES",
+    count: 12,
+    tag: "birthdayCakes",
+  },
+  {
+    id: 3,
+    name: "CUSTOM CAKES",
+    count: 8,
+    tag: "customCakes",
+  },
+  {
+    id: 4,
+    name: "BENTO CAKES",
+    count: 6,
+    tag: "bentoCakes",
+  },
 ];
 
 function TabButton({ label, count, onSelect }) {
@@ -17,97 +37,246 @@ function TabButton({ label, count, onSelect }) {
       <button onClick={onSelect}>
         <span>{label}</span>
         <span className="category-count">{count}</span>
-
       </button>
     </li>
   );
 }
 
-
-function ProductCard({ pic, tag, name, price }) {
-  return (
-    <article>
-      <div className='image-container'>
-        <img src={pic} alt={tag} />
-      </div>
-      <div className='product-info'>
-        <h2>{name}</h2>
-        <p>{tag}</p>
-        <h3>{price}</h3>
-      </div>
-    </article>
-  )
-}
-
-// const products = [
-//   {
-//     id: 1,
-//     name: "...",
-//     tag: "...",
-// const products = [
-//   {
-//     id: 1,
-//     title: "Chocolate Cookies",
-//     price: "₹30",
-//     tag: "Freshly baked",
-//     image: img.cookiesGlucose,
-//     tone: "bg-yellow",
-//   },
-//   {
-//     id: 2,
-//     title: "Sliced Bread",
-//     price: "₹80",
-//     tag: "Sourdough",
-//     image: img.slicedPiece,
-//     tone: "bg-teal",
-//   },
-//   {
-//     id: 3,
-//     title: "Nutty Biscuits",
-//     price: "₹120",
-//     tag: "Hazelnut",
-//     image: img.nuttyBiscuits,
-//     tone: "bg-peach",
-//   },
-//   {
-//     id: 4,
-//     title: "Birthday Cake",
-//     price: "₹500",
-//     tag: "Custom made",
-//     image: img.croissantCard,
-//     tone: "bg-mutedcream",
-//   },
-// ];
-
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("brownies");
 
-  function handleSelect(selectedButton) {
-    setSelectedCategory(selectedButton);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const [direction, setDirection] = useState("next");
+
+  const [isPaused, setIsPaused] = useState(false);
+
+  const products = productsByCategory[selectedCategory] || [];
+
+
+
+  function handleCategoryChange(category) {
+    setSelectedCategory(category);
+    setActiveIndex(0);
+    setDirection("next");
   }
-  const products=productsByCategory[selectedCategory];
+
+
+  function showNext() {
+    if (products.length <= 1) return;
+
+
+    setDirection("next");
+
+    setActiveIndex((current) => {
+      return (
+        (current - 1 + products.length) %
+        products.length
+      );
+    });
+  }
+
+
+  function showPrevious() {
+    if (products.length <= 1) return;
+
+    setDirection("previous");
+
+    setActiveIndex((current) => {
+      return (current + 1) % products.length;
+    });
+  }
+
+  /*
+    =========================================
+    AUTOPLAY
+    =========================================
+  */
+
+  useEffect(() => {
+    if (isPaused || products.length <= 1) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      showNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, products.length, activeIndex]);
+
+
+
+  function getSlidePosition(index) {
+    const total = products.length;
+
+    if (total === 0) {
+      return "hidden";
+    }
+
+    const diff =
+      (index - activeIndex + total) % total;
+
+    /*
+      CENTER
+    */
+
+    if (diff === 0) {
+      return "now";
+    }
+
+
+
+    if (diff === total - 1) {
+      return "prev";
+    }
+
+
+    if (diff === 1) {
+      return "next";
+    }
+
+    if (
+      direction === "next" &&
+      diff === total - 2
+    ) {
+      return "enter-left";
+    }
+
+
+
+    if (
+      direction === "next" &&
+      diff === 2
+    ) {
+      return "exit-right";
+    }
+
+
+
+    if (
+      direction === "previous" &&
+      diff === 2
+    ) {
+      return "enter-right";
+    }
+
+    if (
+      direction === "previous" &&
+      diff === total - 2
+    ) {
+      return "exit-left";
+    }
+
+    return "hidden";
+  }
+
   return (
-    <>
-      <section className="products">
-        <div className="products-header">
-          <h1 className="products-title">PRODUCTS WE BAKE
-            FOR EVERY OCCASION-</h1>
+    <section className="products">
+
+
+      <div className="products-header">
+
+        <div className="products-title-wrap">
+          <h1 className="products-title">
+            PRODUCTS WE BAKE
+            FOR EVERY OCCASION-
+          </h1>
+
+          <Squiggle className="products-title-squiggle" />
+
+          <StarSpark className="products-title-star" />
+        </div>
+        <div className="products-categories-wrap">
+          <StarSpark className="products-category-star" />
           <ul className="products-categories">
+
             {cakeCategories.map((category) => (
-              <TabButton key={category.id} label={category.name} count={category.count} onSelect={()=>handleSelect(category.tag)} />
+              <TabButton
+                key={category.id}
+                label={category.name}
+                count={category.count}
+                onSelect={() =>
+                  handleCategoryChange(category.tag)
+                }
+              />
             ))}
+
           </ul>
         </div>
-        <div className="products-list">
-          {products.map((prod) => (
-            <ProductCard key={prod.id} pic={prod.image} tag={prod.tag} name={prod.title} price={prod.price} />
-          ))}
-        </div>
-        <div className="products-button">
+      </div>
+
+
+      {/* =====================================
+          CAROUSEL
+      ===================================== */}
+
+      <div
+        className="products-carousel-wrapper"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+
+        <div className="products-carousel">
+
+          {products.map((prod, index) => {
+
+            const position = getSlidePosition(index);
+
+            return (
+              <div
+                key={prod.id}
+                className={`product-slide ${position}`}
+              >
+
+                <ProductCard
+                  pic={prod.image}
+                  tag={prod.tag}
+                  name={prod.title}
+                  price={prod.price}
+                />
+
+              </div>
+            );
+          })}
 
         </div>
-      </section>
 
-    </>
-  )
+
+        {/* =====================================
+            LEFT ARROW
+        ===================================== */}
+
+        {products.length > 1 && (
+          <button
+            className="carousel-arrow carousel-arrow-left"
+            onClick={showPrevious}
+            aria-label="Previous product"
+          >
+            ←
+          </button>
+        )}
+
+
+        {/* =====================================
+            RIGHT ARROW
+        ===================================== */}
+
+        {products.length > 1 && (
+          <button
+            className="carousel-arrow carousel-arrow-right"
+            onClick={showNext}
+            aria-label="Next product"
+          >
+            →
+          </button>
+        )}
+
+      </div>
+
+
+      <div className="products-button"></div>
+
+    </section>
+  );
 }
