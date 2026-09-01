@@ -25,14 +25,16 @@
 }
 
 .products-categories {
-  max-width: 570px;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 12px;
+
   list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: end;
+
+  gap: 12px 14px;
 }
 
 .products-categories li {
@@ -41,25 +43,90 @@
 }
 
 .products-categories button {
-  padding: 11px 18px;
-  border: 2px solid var(--color-brand-dark);
+  height: 52px;
+  min-width: 0;
+
+  padding: 6px 8px 6px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  border: none;
   border-radius: 999px;
-  background-color: var(--color-soft-pink);
+
   color: var(--color-brand-dark);
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 400;
+
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 300;
+
   text-transform: uppercase;
+
   cursor: pointer;
+
   transition:
     transform 0.2s ease,
-    background-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
+/* Individual colors */
+
+.products-categories li:nth-child(1) button {
+  background-color: #e7e5e4;
+}
+
+.products-categories li:nth-child(2) button {
+  background-color: #ffe21b;
+}
+
+.products-categories li:nth-child(3) button {
+  background-color: #f7cdb8;
+}
+
+.products-categories li:nth-child(4) button {
+  background-color: #e7dcdc;
+}
+
+.products-categories li:nth-child(5) button {
+  background-color: #a8dce5;
+}
+
+.products-categories li:nth-child(6) button {
+  background-color: #d8c3f4;
+}
+
+
+/* Count bubble */
+
+.category-count {
+  width: 35px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background-color: var(--color-brand-dark);
+  color: white;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* Hover */
+
 .products-categories button:hover {
   transform: translateY(-2px);
-  background-color: #f5d91f;
   box-shadow: 3px 3px 0 var(--color-brand-dark);
 }
 
