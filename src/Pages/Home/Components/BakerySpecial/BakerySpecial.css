@@ -1,0 +1,632 @@
+.bakery-special {
+  width: 100%;
+  padding: 80px 50px;
+  background-color: var(--color-main-bg);
+}
+
+.bakery-special-container {
+  position: relative;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.bakery-special-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.bakery-special-heading {
+  position: relative;
+}
+
+.bakery-special-heading h2 {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-brand-dark);
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.bakery-special-circle {
+  position: absolute;
+  left: -20px;
+  top: -18px;
+  width: 75px;
+  height: 45px;
+  color: #ff7435;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bakery-special-header-action {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.bakery-special-squiggle {
+  width: 95px;
+  height: 25px;
+  color: #8fd8e2;
+}
+
+.bakery-special-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr 0.72fr;
+  gap: 30px;
+  align-items: start;
+  margin-top: 52px;
+}
+
+.bakery-special-left {
+  position: relative;
+  height: 590px;
+}
+
+.bakery-special-main-image {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 42px;
+  background-color: #f0e2d8;
+}
+
+.bakery-special-main-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bakery-special-main-image:hover img {
+  transform: scale(1.02);
+}
+
+.bakery-special-small-image {
+  position: absolute;
+  right: -5px;
+  bottom: 0;
+  width: 57%;
+  height: 205px;
+  overflow: hidden;
+  border: 10px solid var(--color-main-bg);
+  border-radius: 32px;
+  background-color: #f0e2d8;
+  z-index: 3;
+}
+
+.bakery-special-small-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.bakery-special-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 5px;
+}
+
+.bakery-special-baker {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  border-radius: 38px;
+}
+
+.bakery-special-baker img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bakery-special-baker:hover img {
+  transform: scale(1.02);
+}
+
+.bakery-special-baker-tag {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background-color: #f5d91f;
+  color: var(--color-brand-dark);
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.bakery-special-quote {
+  position: relative;
+  padding-left: 40px;
+}
+
+.bakery-special-quote-mark {
+  position: absolute;
+  left: 0;
+  top: -14px;
+  color: #914c1c;
+  font-family: Georgia, serif;
+  font-size: 58px;
+  line-height: 1;
+}
+
+.bakery-special-quote p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--color-brand-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.bakery-special-quote strong {
+  display: block;
+  margin-top: 17px;
+  color: var(--color-brand-dark);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.bakery-special-promo {
+  position: relative;
+  min-width: 0;
+  height: 590px;
+  padding: 36px;
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: #914c1c;
+}
+
+.bakery-special-promo h3 {
+  position: relative;
+  z-index: 2;
+  max-width: 7ch;
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 3.8vw, 58px);
+  font-weight: 400;
+  line-height: 0.88;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.bakery-special-promo p {
+  position: relative;
+  z-index: 2;
+  margin: 30px 0 0;
+  color: #f5d91f;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.bakery-special-promo-star {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 28px;
+  height: 28px;
+  color: #ff7435;
+  z-index: 3;
+}
+
+.bakery-special-promo-image {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  bottom: 36px;
+  height: 195px;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+.bakery-special-promo-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.bakery-special-wheat {
+  position: absolute;
+  width: 90px;
+  height: 180px;
+  color: rgba(145, 76, 28, 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bakery-special-wheat-left {
+  left: -52px;
+  bottom: 45px;
+  transform: rotate(-8deg);
+}
+
+.bakery-special-wheat-right {
+  right: -52px;
+  bottom: 45px;
+  transform: rotate(8deg);
+}
+
+.bakery-special-favourites {
+  position: relative;
+  width: 100%;
+  min-height: 270px;
+  margin-top: 65px;
+  padding: 42px 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) 2px minmax(0, 0.85fr);
+  align-items: center;
+  gap: 48px;
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: #a9dfe8;
+}
+
+.bakery-special-favourites-left {
+  position: relative;
+  z-index: 2;
+}
+
+.bakery-special-favourites-heading {
+  position: relative;
+}
+
+.bakery-special-favourites-heading h3 {
+  position: relative;
+  z-index: 2;
+  max-width: 430px;
+  margin: 0;
+  color: #164c5a;
+  font-family: var(--font-heading);
+  font-size: clamp(35px, 3.4vw, 50px);
+  font-weight: 400;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.bakery-special-favourites-star {
+  position: absolute;
+  left: -12px;
+  top: -17px;
+  width: 78px;
+  height: 78px;
+  color: rgba(245, 217, 31, 0.55);
+  z-index: 1;
+}
+
+.bakery-special-favourites-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 28px;
+}
+
+.bakery-special-avatar {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #f5d91f;
+  color: var(--color-brand-dark);
+  font-size: 23px;
+}
+
+.bakery-special-favourites-note p {
+  margin: 0;
+  color: #164c5a;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.bakery-special-favourites-divider {
+  width: 2px;
+  height: 170px;
+  background-color: rgba(22, 76, 90, 0.25);
+}
+
+.bakery-special-favourites-right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bakery-special-rating {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.bakery-special-rating strong {
+  color: #164c5a;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.bakery-special-rating span {
+  color: rgba(22, 76, 90, 0.7);
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.bakery-special-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.bakery-special-pills span {
+  padding: 8px 15px;
+  border: 2px solid rgba(22, 76, 90, 0.55);
+  border-radius: 999px;
+  color: #164c5a;
+  font-family: var(--font-heading);
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bakery-special-pills span.active {
+  background-color: rgba(245, 217, 31, 0.75);
+}
+
+.bakery-special-favourites-cookie {
+  position: absolute;
+  right: -15px;
+  top: -25px;
+  width: 105px;
+  height: 105px;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.bakery-special-favourites-cookie img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  .bakery-special {
+    padding: 65px 35px;
+  }
+
+  .bakery-special-showcase {
+    grid-template-columns: 1.05fr 0.95fr 0.72fr;
+    gap: 20px;
+  }
+
+  .bakery-special-left {
+    height: 510px;
+  }
+
+  .bakery-special-main-image {
+    height: 430px;
+  }
+
+  .bakery-special-small-image {
+    height: 165px;
+  }
+
+  .bakery-special-baker {
+    height: 290px;
+  }
+
+  .bakery-special-promo {
+    height: 510px;
+    padding: 28px;
+  }
+
+  .bakery-special-promo h3 {
+    font-size: 43px;
+  }
+
+  .bakery-special-promo-image {
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+    height: 160px;
+  }
+
+  .bakery-special-favourites {
+    padding: 38px;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .bakery-special {
+    padding: 55px 20px;
+  }
+
+  .bakery-special-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bakery-special-heading h2 {
+    font-size: clamp(42px, 8vw, 60px);
+  }
+
+  .bakery-special-header-action {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .bakery-special-showcase {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .bakery-special-left {
+    grid-column: 1 / -1;
+    height: 400px;
+  }
+
+  .bakery-special-main-image {
+    height: 345px;
+  }
+
+  .bakery-special-small-image {
+    width: 38%;
+    height: 145px;
+  }
+
+  .bakery-special-middle {
+    gap: 30px;
+  }
+
+  .bakery-special-baker {
+    height: 270px;
+  }
+
+  .bakery-special-promo {
+    height: 400px;
+    padding: 26px;
+  }
+
+  .bakery-special-promo h3 {
+    font-size: 38px;
+  }
+
+  .bakery-special-promo-image {
+    left: 26px;
+    right: 26px;
+    bottom: 26px;
+    height: 135px;
+  }
+
+  .bakery-special-wheat {
+    display: none;
+  }
+
+  .bakery-special-favourites {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px;
+  }
+
+  .bakery-special-favourites-divider {
+    width: 100%;
+    height: 2px;
+  }
+}
+
+@media (max-width: 550px) {
+  .bakery-special {
+    padding: 45px 15px;
+  }
+
+  .bakery-special-heading h2 {
+    font-size: 38px;
+  }
+
+  .bakery-special-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .bakery-special-left {
+    height: 350px;
+  }
+
+  .bakery-special-main-image {
+    height: 310px;
+    border-radius: 30px;
+  }
+
+  .bakery-special-small-image {
+    right: 5px;
+    bottom: 0;
+    width: 42%;
+    height: 125px;
+    border-width: 7px;
+    border-radius: 24px;
+  }
+
+  .bakery-special-baker {
+    height: 250px;
+    border-radius: 30px;
+  }
+
+  .bakery-special-promo {
+    height: 370px;
+    border-radius: 30px;
+  }
+
+  .bakery-special-promo h3 {
+    font-size: 38px;
+  }
+
+  .bakery-special-promo-image {
+    height: 135px;
+  }
+
+  .bakery-special-favourites {
+    margin-top: 45px;
+    padding: 30px 25px;
+    border-radius: 30px;
+  }
+
+  .bakery-special-favourites-heading h3 {
+    font-size: 33px;
+  }
+
+  .bakery-special-rating strong {
+    font-size: 28px;
+  }
+
+  .bakery-special-pills span {
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+
+  .bakery-special-favourites-brownie {
+    width: 75px;
+    height: 75px;
+  }
+}
