@@ -11,6 +11,7 @@ import {
 import featured_img from "../../../../assets/Brownie-feaured.png";
 import featured_img2 from "../../../../assets/Featured-double-chocolate.png";
 import logo from "../../../../assets/Bakery-Logo.jpeg";
+import cookie from '../../../../assets/cookie.png';
 
 export default function BakerySpecial() {
   return (
@@ -215,8 +216,8 @@ export default function BakerySpecial() {
 
           <div className="bakery-special-favourites-cookie">
             <img
-              src="/src/assets/cookie.png"
-              alt=""
+              src={cookie}
+              alt="cookie"
               aria-hidden="true"
             />
           </div>

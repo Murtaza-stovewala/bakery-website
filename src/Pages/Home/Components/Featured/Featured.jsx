@@ -3,6 +3,8 @@ import "./Featured.css";
 // import featured_img from '../../../../assets/Featured.png';
 import featured_img from '../../../../assets/Brownie-feaured.png';
 import featured_img2 from '../../../../assets/Featured-double-chocolate.png';
+import cookie from '../../../../assets/cookie.png';
+
 // import featured_img2 from '../../../../assets/Featured2.png';
 
 
@@ -58,7 +60,7 @@ export default function Featured() {
 
               <div className="featured-decoration-center">
                 <img
-                  src="/src/assets/cookie.png"
+                  src={cookie}
                   alt="Cookie"
                 />
               </div>
