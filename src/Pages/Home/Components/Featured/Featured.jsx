@@ -1,7 +1,16 @@
 import Button from '../../../../Components/Button/Button';
 import "./Featured.css";
-import featured_img from '../../../../assets/Featured.png';
-import featured_img2 from '../../../../assets/Featured2.png';
+// import featured_img from '../../../../assets/Featured.png';
+import featured_img from '../../../../assets/Brownie-feaured.png';
+import featured_img2 from '../../../../assets/Featured-double-chocolate.png';
+// import featured_img2 from '../../../../assets/Featured2.png';
+
+
+import {
+  StarSpark,
+  WheatDoodle,
+  Squiggle
+} from "../doodles";
 
 export default function Featured() {
   return (
@@ -11,6 +20,9 @@ export default function Featured() {
 
         {/* LEFT - Featured Cake Image */}
         <div className="featured-image">
+
+          {/* LEFT WHEAT DOODLE */}
+          <WheatDoodle className="featured-wheat featured-wheat-left" />
 
           {/* FAMILY FUN WHEEL */}
           <div className="featured-decoration">
@@ -38,7 +50,7 @@ export default function Featured() {
                     textLength="289"
                     lengthAdjust="spacingAndGlyphs"
                   >
-                    <span>•</span> FAMILY FUN FOR THE WHOLE FAMILY • <span>•</span>
+                    OUR SIGNATURE BROWNIES • BAKED WITH LOVE •
                   </textPath>
                 </text>
 
@@ -68,6 +80,12 @@ export default function Featured() {
         {/* RIGHT - Featured Cake Details */}
         <div className="featured-text">
 
+          {/* STAR */}
+          <StarSpark className="featured-star" />
+
+          {/* SQUIGGLE */}
+          <Squiggle className="featured-squiggle" />
+
           <div className="featured-heading">
 
             <h2>
@@ -75,7 +93,6 @@ export default function Featured() {
               <br />
               YOUR MOMENTS
             </h2>
-
 
           </div>
 
@@ -92,34 +109,44 @@ export default function Featured() {
               <div className="product-preview">
                 <img
                   src={featured_img2}
-                  alt="Featured custom cake"
+                  alt="Featured Brownie"
                 />
               </div>
 
               <div className="product-info">
-                <h3>Custom Birthday Cake</h3>
-                <p>Made to order</p>
+
+                <h3>
+                  SIGNATURE DOUBLE CHOCOLATE BROWNIES 
+                </h3>
+
+                <p>
+                  Made to order
+                </p>
+
               </div>
 
               <div className="product-divider"></div>
 
               <div className="product-price">
-                ₹500
+                ₹320
               </div>
 
             </div>
 
 
             <p className="featured-description">
-              Make every celebration a little sweeter with a custom cake made just for you. Choose your design, colors, flavors, and details — we’ll turn your idea into something deliciously special.
+              Our brownies are baked to be rich, fudgy and unforgettable — from classic chocolate to indulgent loaded creations, every box is made with care.
             </p>
 
           </div>
 
 
           <Button>
-            VIEW CUSTOM CAKES
+           VIEW BROWNIES
           </Button>
+
+          {/* RIGHT WHEAT DOODLE */}
+          <WheatDoodle className="featured-wheat featured-wheat-right" />
 
         </div>
 
