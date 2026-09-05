@@ -2,7 +2,7 @@ import logo from '../../assets/Bakery-Logo.png';
 import "./Navbar.css";
 import Button from '../Button/Button';
 
-
+const navLinkStyles = "your Tailwind classes here";
 
 export default function NavBar(){
 return(
@@ -15,7 +15,7 @@ return(
         </a>
 
         {/* Navigation */}
-        <div className="navbar-links">
+        <div className="navbar-links flex items-center gap-8">
           <a href="/" className="nav-link">
             HOME
           </a>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { productsByCategory } from "../data";
-import "./Products.css";
-import ProductCard from "./ProductCard";
+import "./HomeProducts.css";
+import ProductCard from "./HomeProductsCard";
 import { Squiggle, StarSpark, WheatDoodle } from "../doodles";
 
 const cakeCategories = [
