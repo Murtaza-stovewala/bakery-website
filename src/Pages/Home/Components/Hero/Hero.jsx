@@ -1,38 +1,71 @@
 import Button from '../../../../Components/Button/Button';
-import "./Hero.css"
+import "./Hero.css";
 import hero_img from '../../../../assets/hero-main.png';
+
+import {
+  StarSpark,
+  WheatDoodle,
+  Squiggle
+} from "../doodles";
+
 export default function Hero() {
+
   return (
+
     <section className="hero">
+
       <div className="hero-content">
-        <h1 className="hero-title">Professional Home Baker</h1>
-        {/* <div className="hero-title-wrapper">
-          <span className="hero-steam">≋</span>
 
-          <h1 className="hero-title">
-            BAKE <span className="tasty-badge">TASTY</span> THE
-            <br />
-            COOKIES <span className="crunchy-badge">CRUNCHY</span>
-          </h1>
-        </div> */}
+        <StarSpark className="hero-star hero-star-top" />
 
+        <WheatDoodle className="hero-wheat hero-wheat-left" />
+
+        <WheatDoodle className="hero-wheat hero-wheat-right" />
+
+        <h1 className="hero-title">
+          Professional Home Baker
+        </h1>
 
         <div className="hero-text">
 
-          <h2>Homemade cakes, brownies, cookies & more — made fresh on pre-order.</h2>
+          <Squiggle className="hero-squiggle" />
+
+          <h2>
+            Homemade cakes, brownies, cookies & more — made fresh on pre-order.
+          </h2>
+
           <p>
             We're passionate about creating delicious treats
             you'll love.
           </p>
+
           <div className="hero-actions">
-            <Button link="/contact">EXPLORE MENU</Button>
-            {/* Button will go here */}
+
+            <Button link="/contact">
+              EXPLORE MENU
+            </Button>
+
           </div>
+
         </div>
+
         <div className="hero-image">
-          <img src={hero_img} alt="Hero Image" />
+
+          <StarSpark className="hero-star hero-star-image" />
+
+          <img
+            src={hero_img}
+            alt="Professional Home Baker"
+          />
+
         </div>
+
+        <Squiggle className="hero-bottom-squiggle" />
+
       </div>
+
     </section>
-  )
+
+  );
+
 }
