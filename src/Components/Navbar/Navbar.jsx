@@ -17,11 +17,11 @@ return(
         {/* Navigation */}
         <div className="navbar-links">
           <a href="/" className="nav-link">
-            CAKES
+            HOME
           </a>
 
-          <a href="/bakery" className="nav-link nav-dropdown">
-            BAKERY
+          <a href="/products" className="nav-link nav-dropdown">
+            PRODUCTS
             <span className="dropdown-icon">⌄</span>
           </a>
 
@@ -29,10 +29,10 @@ return(
             ABOUT US
           </a>
 
-          <a href="/cookies" className="nav-link nav-dropdown">
-            COOKIES
+          {/* <a href="/BAKERY" className="nav-link nav-dropdown">
+            BAKERY
             <span className="dropdown-icon">⌄</span>
-          </a>
+          </a> */}
 
           <a href="/contact" className="nav-link">
             CONTACT
@@ -61,3 +61,22 @@ return(
     </nav>
 )
 }
+
+/*
+PRODUCTS ▼
+│
+├── ALL PRODUCTS
+├── BROWNIES
+├── BIRTHDAY CAKES
+├── CUSTOM CAKES
+├── BENTO CAKES
+├── COOKIES
+└── DESSERTS
+ALL PRODUCTS
+/products
+
+BROWNIES
+/products?category=brownies
+
+
+*/
