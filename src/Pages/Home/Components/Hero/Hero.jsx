@@ -6,7 +6,7 @@ import {
   StarSpark,
   WheatDoodle,
   Squiggle
-} from "../doodles";
+} from "../../../../Components/doodles";
 
 export default function Hero() {
 

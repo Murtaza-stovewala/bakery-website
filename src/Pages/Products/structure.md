@@ -108,7 +108,38 @@ PRODUCTS PAGE
 │ Product │ │ Product │ │ Product │
 └─────────┘ └─────────┘ └─────────┘
 ```
-
+```text
+PRODUCTS PAGE
+│
+├── 1. PAGE HERO / HEADER
+│      "SOMETHING SWEET FOR EVERY MOMENT"
+│      Short description
+│
+├── 2. CATEGORY NAVIGATION
+│      ALL PRODUCTS
+│      BROWNIES ⭐
+│      BIRTHDAY CAKES
+│      CUSTOM CAKES
+│      BENTO CAKES
+│      COOKIES
+│      DESSERTS
+│
+├── 3. FEATURED CATEGORY
+│      🍫 OUR SIGNATURE BROWNIES
+│      → Special visual section
+│
+├── 4. PRODUCTS GRID
+│      Product Card
+│      Product Card
+│      Product Card
+│      Product Card
+│
+├── 5. CUSTOM ORDER CTA
+│      "CAN'T FIND WHAT YOU'RE LOOKING FOR?"
+│      → Contact / Start Baking
+│
+└── Footer
+```
 ## Important: Navbar architecture
 
 Your updated navbar direction is correct:

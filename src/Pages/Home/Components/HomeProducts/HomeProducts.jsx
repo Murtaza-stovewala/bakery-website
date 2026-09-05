@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { productsByCategory } from "../data";
 import "./HomeProducts.css";
-import ProductCard from "./HomeProductsCard";
-import { Squiggle, StarSpark, WheatDoodle } from "../doodles";
+import HomeProductCard from "./HomeProductsCard";
+import { Squiggle, StarSpark, WheatDoodle } from "../../../../Components/doodles";
 
 const cakeCategories = [
   {
@@ -229,7 +229,7 @@ export default function HomeProducts() {
                 className={`product-slide ${position}`}
               >
 
-                <ProductCard
+                <HomeProductCard
                   pic={prod.image}
                   tag={prod.tag}
                   name={prod.title}

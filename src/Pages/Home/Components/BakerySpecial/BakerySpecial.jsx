@@ -6,7 +6,7 @@ import {
   WheatDoodle,
   Squiggle,
   HandCircle,
-} from "../doodles";
+} from "../../../../Components/doodles";
 
 import featured_img from "../../../../assets/Brownie-feaured.png";
 import featured_img2 from "../../../../assets/Featured-double-chocolate.png";

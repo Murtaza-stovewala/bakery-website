@@ -1,4 +1,4 @@
-export default function ProductCard({ pic, tag, name, price }) {
+export default function HomeProductCard({ pic, tag, name, price }) {
   return (
     <article>
       <div className='image-container'>
