@@ -2,9 +2,53 @@
 Yes. Since your **Home page is already inside `Pages/Home`**, we should now create a separate **Products page** in the same pattern.
 
 I recommend this structure:
-
-    src│├── Components│ ├── Button│ ├── Footer│ ├── Navbar│ └── ...│├── Pages│ ││ ├── Home│ │ ├── Home.jsx│ │ └── Components│ │ ├── Hero│ │ ├── Featured│ │ ├── Products│ │ ├── BakingFeature│ │ └── BakerySpecial│ ││ └── Products│ ├── Products.jsx│ ├── Products.css│ ││ └── Components│ ├── ProductsHero│ │ ├── ProductsHero.jsx│ │ └── ProductsHero.css│ ││ ├── CategoryFilter│ │ ├── CategoryFilter.jsx│ │ └── CategoryFilter.css│ ││ ├── ProductGrid│ │ ├── ProductGrid.jsx│ │ └── ProductGrid.css│ ││ └── ProductCard│ ├── ProductCard.jsx│ └── ProductCard.css│├── assets│ ├── ...│├── App.jsx└── main.jsx
-
+```text
+    src
+│
+├── Components
+│   ├── Button
+│   ├── Footer
+│   ├── Navbar
+│   └── ...
+│
+├── Pages
+│   │
+│   ├── Home
+│   │   ├── Home.jsx
+│   │   └── Components
+│   │       ├── Hero
+│   │       ├── Featured
+│   │       ├── Products
+│   │       ├── BakingFeature
+│   │       └── BakerySpecial
+│   │
+│   └── Products
+│       ├── Products.jsx
+│       ├── Products.css
+│       │
+│       └── Components
+│           ├── ProductsHero
+│           │   ├── ProductsHero.jsx
+│           │   └── ProductsHero.css
+│           │
+│           ├── CategoryFilter
+│           │   ├── CategoryFilter.jsx
+│           │   └── CategoryFilter.css
+│           │
+│           ├── ProductGrid
+│           │   ├── ProductGrid.jsx
+│           │   └── ProductGrid.css
+│           │
+│           └── ProductCard
+│               ├── ProductCard.jsx
+│               └── ProductCard.css
+│
+├── assets
+│   ├── ...
+│
+├── App.jsx
+└── main.jsx
+```
 ## But I would suggest something slightly cleaner for your project
 
 Because we will eventually have:
@@ -36,7 +80,34 @@ Later, when we connect MongoDB, we can replace this dummy data with real API dat
 
 The page should look conceptually like:
 
-    PRODUCTS PAGE ┌─────────────────────────────────────┐│ ││ OUR SWEET COLLECTION ││ Cakes, brownies & baked goodies ││ │└─────────────────────────────────────┘ ALL BROWNIES BIRTHDAY CAKES CUSTOM CAKES BENTO COOKIES ┌─────────┐ ┌─────────┐ ┌─────────┐│ Product │ │ Product │ │ Product ││ Image │ │ Image │ │ Image ││ │ │ │ │ ││ Name │ │ Name │ │ Name ││ ₹320 │ │ ₹500 │ │ ₹400 │└─────────┘ └─────────┘ └─────────┘ ┌─────────┐ ┌─────────┐ ┌─────────┐│ Product │ │ Product │ │ Product │└─────────┘ └─────────┘ └─────────┘
+```text
+PRODUCTS PAGE
+
+┌─────────────────────────────────────┐
+│                                     │
+│        OUR SWEET COLLECTION         │
+│   Cakes, brownies & baked goodies   │
+│                                     │
+└─────────────────────────────────────┘
+
+
+   ALL     BROWNIES     BIRTHDAY CAKES
+   CUSTOM CAKES    BENTO    COOKIES
+
+
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│ Product │ │ Product │ │ Product │
+│  Image  │ │  Image  │ │  Image  │
+│         │ │         │ │         │
+│ Name    │ │ Name    │ │ Name    │
+│ ₹320    │ │ ₹500    │ │ ₹400    │
+└─────────┘ └─────────┘ └─────────┘
+
+
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│ Product │ │ Product │ │ Product │
+└─────────┘ └─────────┘ └─────────┘
+```
 
 ## Important: Navbar architecture
 

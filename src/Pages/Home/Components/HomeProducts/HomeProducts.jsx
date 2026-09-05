@@ -42,7 +42,7 @@ function TabButton({ label, count, onSelect }) {
   );
 }
 
-export default function Products() {
+export default function HomeProducts() {
   const [selectedCategory, setSelectedCategory] = useState("brownies");
 
   const [activeIndex, setActiveIndex] = useState(0);

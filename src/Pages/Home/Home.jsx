@@ -1,6 +1,6 @@
 import Hero from "./Components/Hero/Hero";
 import Featured from "./Components/Featured/Featured";
-import Products from "./Components/HomeProducts/HomeProducts";
+import HomeProducts from "./Components/HomeProducts/HomeProducts";
 import BakingFeature from "./Components/BakingFeature/BakingFeature";
 import BakerySpecial from "./Components/BakerySpecial/BakerySpecial";
 
@@ -9,7 +9,7 @@ export default function Home(){
         <>
         <Hero/>
         <Featured/>
-        <Products/>
+        <HomeProducts/>
         <BakingFeature/>
         <BakerySpecial/>
         </>
