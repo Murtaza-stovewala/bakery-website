@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { productsByCategory } from "../data";
+import { productsByCategory } from "../../../../Components/data";
 import "./HomeProducts.css";
 import HomeProductCard from "./HomeProductsCard";
 import { Squiggle, StarSpark, WheatDoodle } from "../../../../Components/doodles";
+import TabButton from "../../../../Components/TabButton/TabButton";
 
 const cakeCategories = [
   {
@@ -10,37 +11,31 @@ const cakeCategories = [
     name: "BROWNIES",
     count: 7,
     tag: "brownies",
+    variant: "tab-button-gray",
   },
   {
     id: 2,
     name: "BIRTHDAY CAKES",
     count: 12,
     tag: "birthdayCakes",
+    variant: "tab-button-yellow",
   },
   {
     id: 3,
     name: "CUSTOM CAKES",
     count: 8,
     tag: "customCakes",
+    variant: "tab-button-pink",
   },
   {
     id: 4,
     name: "BENTO CAKES",
     count: 6,
     tag: "bentoCakes",
+    variant: "tab-button-light-pink",
   },
 ];
 
-function TabButton({ label, count, onSelect }) {
-  return (
-    <li>
-      <button onClick={onSelect}>
-        <span>{label}</span>
-        <span className="homeproducts-category-count">{count}</span>
-      </button>
-    </li>
-  );
-}
 
 export default function HomeProducts() {
   const [selectedCategory, setSelectedCategory] = useState("brownies");
@@ -173,6 +168,7 @@ export default function HomeProducts() {
                 key={category.id}
                 label={category.name}
                 count={category.count}
+                  variant={category.variant}
                 onSelect={() =>
                   handleCategoryChange(category.tag)
                 }

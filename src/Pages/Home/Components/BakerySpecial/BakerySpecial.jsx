@@ -1,6 +1,6 @@
 import Button from "../../../../Components/Button/Button";
 import "./BakerySpecial.css";
-import { img } from "../data";
+import { img } from "../../../../Components/data";
 import {
   StarSpark,
   WheatDoodle,
