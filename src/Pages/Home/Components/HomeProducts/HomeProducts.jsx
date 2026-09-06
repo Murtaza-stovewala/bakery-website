@@ -36,7 +36,7 @@ function TabButton({ label, count, onSelect }) {
     <li>
       <button onClick={onSelect}>
         <span>{label}</span>
-        <span className="category-count">{count}</span>
+        <span className="homeproducts-category-count">{count}</span>
       </button>
     </li>
   );
@@ -53,18 +53,14 @@ export default function HomeProducts() {
 
   const products = productsByCategory[selectedCategory] || [];
 
-
-
   function handleCategoryChange(category) {
     setSelectedCategory(category);
     setActiveIndex(0);
     setDirection("next");
   }
 
-
   function showNext() {
     if (products.length <= 1) return;
-
 
     setDirection("next");
 
@@ -76,7 +72,6 @@ export default function HomeProducts() {
     });
   }
 
-
   function showPrevious() {
     if (products.length <= 1) return;
 
@@ -86,12 +81,6 @@ export default function HomeProducts() {
       return (current + 1) % products.length;
     });
   }
-
-  /*
-    =========================================
-    AUTOPLAY
-    =========================================
-  */
 
   useEffect(() => {
     if (isPaused || products.length <= 1) {
@@ -105,8 +94,6 @@ export default function HomeProducts() {
     return () => clearInterval(interval);
   }, [isPaused, products.length, activeIndex]);
 
-
-
   function getSlidePosition(index) {
     const total = products.length;
 
@@ -117,20 +104,13 @@ export default function HomeProducts() {
     const diff =
       (index - activeIndex + total) % total;
 
-    /*
-      CENTER
-    */
-
     if (diff === 0) {
       return "now";
     }
 
-
-
     if (diff === total - 1) {
       return "prev";
     }
-
 
     if (diff === 1) {
       return "next";
@@ -143,16 +123,12 @@ export default function HomeProducts() {
       return "enter-left";
     }
 
-
-
     if (
       direction === "next" &&
       diff === 2
     ) {
       return "exit-right";
     }
-
-
 
     if (
       direction === "previous" &&
@@ -172,24 +148,25 @@ export default function HomeProducts() {
   }
 
   return (
-    <section className="products">
+    <section className="homeproducts">
 
+      <div className="homeproducts-header">
 
-      <div className="products-header">
-
-        <div className="products-title-wrap">
-          <h1 className="products-title">
+        <div className="homeproducts-title-wrap">
+          <h1 className="homeproducts-title">
             PRODUCTS WE BAKE
             FOR EVERY OCCASION-
           </h1>
 
-          <Squiggle className="products-title-squiggle" />
+          <Squiggle className="homeproducts-title-squiggle" />
 
-          <StarSpark className="products-title-star" />
+          <StarSpark className="homeproducts-title-star" />
         </div>
-        <div className="products-categories-wrap">
-          <StarSpark className="products-category-star" />
-          <ul className="products-categories">
+
+        <div className="homeproducts-categories-wrap">
+          <StarSpark className="homeproducts-category-star" />
+
+          <ul className="homeproducts-categories">
 
             {cakeCategories.map((category) => (
               <TabButton
@@ -204,20 +181,16 @@ export default function HomeProducts() {
 
           </ul>
         </div>
+
       </div>
 
-
-      {/* =====================================
-          CAROUSEL
-      ===================================== */}
-
       <div
-        className="products-carousel-wrapper"
+        className="homeproducts-carousel-wrapper"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
 
-        <div className="products-carousel">
+        <div className="homeproducts-carousel">
 
           {products.map((prod, index) => {
 
@@ -242,11 +215,6 @@ export default function HomeProducts() {
 
         </div>
 
-
-        {/* =====================================
-            LEFT ARROW
-        ===================================== */}
-
         {products.length > 1 && (
           <button
             className="carousel-arrow carousel-arrow-left"
@@ -256,11 +224,6 @@ export default function HomeProducts() {
             ←
           </button>
         )}
-
-
-        {/* =====================================
-            RIGHT ARROW
-        ===================================== */}
 
         {products.length > 1 && (
           <button
@@ -274,8 +237,7 @@ export default function HomeProducts() {
 
       </div>
 
-
-      <div className="products-button"></div>
+      <div className="homeproducts-button"></div>
 
     </section>
   );

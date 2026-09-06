@@ -147,8 +147,15 @@ Your updated navbar direction is correct:
     HOMEPRODUCTS ↓ABOUT USCONTACTGALLERY
 
 And **Products** should eventually contain:
-
-    PRODUCTS ▼ ALL PRODUCTSBROWNIESBIRTHDAY CAKESCUSTOM CAKESBENTO CAKESCOOKIESDESSERTS
+```text
+    PRODUCTS ▼ ALL PRODUCTS 
+              BROWNIES 
+              BIRTHDAY CAKES
+              CUSTOM CAKES
+              BENTO CAKE
+              SCOOKIES
+              DESSERTS
+```
 
 For now, the navbar can simply link:
 

@@ -1,9 +1,10 @@
+import ProductHero from "./Components/ProductHero/ProductHero";
 
 
 export default function Products() {
   return (
-    <div>
-      Products Page
-    </div>
+    <>
+    <ProductHero/>
+    </>
   );
 }
