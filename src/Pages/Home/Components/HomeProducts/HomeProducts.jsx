@@ -11,28 +11,28 @@ const cakeCategories = [
     name: "BROWNIES",
     count: 7,
     tag: "brownies",
-    variant: "tab-button-gray",
+    variant: "tab-button-coral",
   },
   {
     id: 2,
     name: "BIRTHDAY CAKES",
     count: 12,
     tag: "birthdayCakes",
-    variant: "tab-button-yellow",
+    variant: "tab-button-lavender",
   },
   {
     id: 3,
     name: "CUSTOM CAKES",
     count: 8,
     tag: "customCakes",
-    variant: "tab-button-pink",
+    variant: "tab-button-lightorange",
   },
   {
     id: 4,
     name: "BENTO CAKES",
     count: 6,
     tag: "bentoCakes",
-    variant: "tab-button-light-pink",
+    variant: "tab-button-light-aqua",
   },
 ];
 

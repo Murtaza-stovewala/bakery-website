@@ -15,7 +15,7 @@
 
   border-radius: 999px;
 
-  color: var(--color-brand-dark);
+  /* color: var(--color-brand-dark); */
 
   font-family: var(--font-heading);
 
@@ -38,6 +38,33 @@
   box-shadow:
     3px 3px 0 var(--color-brand-dark);
 }
+
+.tab-button-coral{
+  background-color: #D7C6C3;
+  color:#360203;
+
+}
+
+.tab-button-lightorange {
+  background-color: #FEC9B0;
+  color:#7A2700;
+}
+
+.tab-button-yellow {
+  background-color: #ffe21b;
+  color:#FF871B;
+}
+
+.tab-button-lavender {
+  background-color: #DFC6FE;
+  color:#4b3369;
+}
+
+.tab-button-light-aqua {
+  background-color: #A5CED5;
+  color:#02525D;
+}
+
 
 .tab-button-count {
   width: 35px;
@@ -62,19 +89,29 @@
   font-weight: 700;
 
   line-height: 1;
-}
-.tab-button-gray {
-  background-color: #e7e5e4;
+} 
+
+.count-tab-button-coral {
+  background-color: #360203;
+  color: white;
 }
 
-.tab-button-yellow {
-  background-color: #ffe21b;
+.count-tab-button-lightorange {
+  background-color: #7A2700;
+  color: white;
 }
 
-.tab-button-pink {
-  background-color: #f7cdb8;
+.count-tab-button-yellow {
+  background-color: #FF871B;
+  color: white;
 }
 
-.tab-button-light-pink {
-  background-color: #e7dcdc;
+.count-tab-button-lavender {
+  background-color: #4b3369;
+  color: white;
+}
+
+.count-tab-button-light-aqua {
+  background-color: #02525D;
+  color: white;
 }

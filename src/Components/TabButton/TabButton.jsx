@@ -14,7 +14,7 @@ export default function TabButton({
       >
         <span>{label}</span>
 
-        <span className="tab-button-count">
+        <span className={`tab-button-count count-${variant}`}>
           {count}
         </span>
       </button>
