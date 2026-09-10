@@ -1,4 +1,5 @@
 import TabButton from "../../../../Components/TabButton/TabButton";
+import "./ProductCategories.css";
 
 const cakeCategories = [
   {

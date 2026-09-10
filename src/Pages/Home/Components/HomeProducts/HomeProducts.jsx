@@ -2,7 +2,19 @@ import { useEffect, useState } from "react";
 import { productsByCategory } from "../../../../Components/data";
 import "./HomeProducts.css";
 import HomeProductCard from "./HomeProductsCard";
-import { Squiggle, StarSpark, WheatDoodle } from "../../../../Components/doodles";
+
+import {
+  getNextIndex,
+  getPreviousIndex,
+  getSlidePosition,
+} from "./carouselUtils";
+
+import {
+  Squiggle,
+  StarSpark,
+  WheatDoodle,
+} from "../../../../Components/doodles";
+
 import TabButton from "../../../../Components/TabButton/TabButton";
 
 const cakeCategories = [
@@ -36,14 +48,10 @@ const cakeCategories = [
   },
 ];
 
-
 export default function HomeProducts() {
   const [selectedCategory, setSelectedCategory] = useState("brownies");
-
   const [activeIndex, setActiveIndex] = useState(0);
-
   const [direction, setDirection] = useState("next");
-
   const [isPaused, setIsPaused] = useState(false);
 
   const products = productsByCategory[selectedCategory] || [];
@@ -59,12 +67,9 @@ export default function HomeProducts() {
 
     setDirection("next");
 
-    setActiveIndex((current) => {
-      return (
-        (current - 1 + products.length) %
-        products.length
-      );
-    });
+    setActiveIndex((current) =>
+      getNextIndex(current, products.length)
+    );
   }
 
   function showPrevious() {
@@ -72,9 +77,9 @@ export default function HomeProducts() {
 
     setDirection("previous");
 
-    setActiveIndex((current) => {
-      return (current + 1) % products.length;
-    });
+    setActiveIndex((current) =>
+      getPreviousIndex(current, products.length)
+    );
   }
 
   useEffect(() => {
@@ -89,67 +94,13 @@ export default function HomeProducts() {
     return () => clearInterval(interval);
   }, [isPaused, products.length, activeIndex]);
 
-  function getSlidePosition(index) {
-    const total = products.length;
-
-    if (total === 0) {
-      return "hidden";
-    }
-
-    const diff =
-      (index - activeIndex + total) % total;
-
-    if (diff === 0) {
-      return "now";
-    }
-
-    if (diff === total - 1) {
-      return "prev";
-    }
-
-    if (diff === 1) {
-      return "next";
-    }
-
-    if (
-      direction === "next" &&
-      diff === total - 2
-    ) {
-      return "enter-left";
-    }
-
-    if (
-      direction === "next" &&
-      diff === 2
-    ) {
-      return "exit-right";
-    }
-
-    if (
-      direction === "previous" &&
-      diff === 2
-    ) {
-      return "enter-right";
-    }
-
-    if (
-      direction === "previous" &&
-      diff === total - 2
-    ) {
-      return "exit-left";
-    }
-
-    return "hidden";
-  }
-
   return (
     <section className="homeproducts">
-
       <div className="homeproducts-header">
-
         <div className="homeproducts-title-wrap">
           <h1 className="homeproducts-title">
             PRODUCTS WE BAKE
+            <br />
             FOR EVERY OCCASION-
           </h1>
 
@@ -162,22 +113,11 @@ export default function HomeProducts() {
           <StarSpark className="homeproducts-category-star" />
 
           <ul className="homeproducts-categories">
-
             {cakeCategories.map((category) => (
-              <TabButton
-                key={category.id}
-                label={category.name}
-                count={category.count}
-                  variant={category.variant}
-                onSelect={() =>
-                  handleCategoryChange(category.tag)
-                }
-              />
+              <TabButton key={category.id} label={category.name} count={category.count} variant={category.variant} onSelect={() =>handleCategoryChange(category.tag)}/>
             ))}
-
           </ul>
         </div>
-
       </div>
 
       <div
@@ -185,30 +125,29 @@ export default function HomeProducts() {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-
         <div className="homeproducts-carousel">
-
           {products.map((prod, index) => {
-
-            const position = getSlidePosition(index);
+            const position = getSlidePosition(
+              index,
+              activeIndex,
+              products.length,
+              direction
+            );
 
             return (
               <div
                 key={prod.id}
                 className={`product-slide ${position}`}
               >
-
                 <HomeProductCard
                   pic={prod.image}
                   tag={prod.tag}
                   name={prod.title}
                   price={prod.price}
                 />
-
               </div>
             );
           })}
-
         </div>
 
         {products.length > 1 && (
@@ -230,11 +169,9 @@ export default function HomeProducts() {
             →
           </button>
         )}
-
       </div>
 
       <div className="homeproducts-button"></div>
-
     </section>
   );
 }

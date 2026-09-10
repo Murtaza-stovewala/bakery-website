@@ -59,7 +59,7 @@
 
 }
 
-.hero-title::before {
+/* .hero-title::before {
 
   content: "≋";
 
@@ -79,7 +79,7 @@
 
   line-height: 1;
 
-}
+} */
 
 .hero-text {
 
