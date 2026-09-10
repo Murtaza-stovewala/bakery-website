@@ -5,11 +5,12 @@ export default function TabButton({
   count,
   onSelect,
   variant,
+  isSelected
 }) {
   return (
     <li>
-      <button
-        className={`tab-button ${variant}`}
+      <button 
+        className={`tab-button ${variant} ${isSelected ? 'active' : ''}` }
         onClick={onSelect}
       >
         <span>{label}</span>

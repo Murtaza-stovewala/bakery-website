@@ -114,7 +114,7 @@ export default function HomeProducts() {
 
           <ul className="homeproducts-categories">
             {cakeCategories.map((category) => (
-              <TabButton key={category.id} label={category.name} count={category.count} variant={category.variant} onSelect={() =>handleCategoryChange(category.tag)}/>
+              <TabButton key={category.id} label={category.name} count={category.count} variant={category.variant} onSelect={() =>handleCategoryChange(category.tag)} isSelected={selectedCategory==category.tag}/>
             ))}
           </ul>
         </div>
