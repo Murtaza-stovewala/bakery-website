@@ -1,5 +1,7 @@
+import { useState } from "react";
 import TabButton from "../../../../Components/TabButton/TabButton";
 import "./ProductCategories.css";
+
 
 const cakeCategories = [
   {
@@ -38,7 +40,43 @@ const cakeCategories = [
   },
 ];
 
+const categoryInfo = {
+  ALL: {
+    title: "OUR SWEET COLLECTION",
+    description:
+      "Explore our complete collection of freshly baked cakes, brownies, cookies and delightful treats made with love."
+  },
+
+  brownies: {
+    title: "SIGNATURE BROWNIES",
+    description:
+      "Rich, fudgy and irresistibly chocolatey brownies, freshly baked to make every bite unforgettable."
+  },
+
+  birthdayCakes: {
+    title: "CELEBRATION CAKES",
+    description:
+      "Beautifully crafted cakes made to make birthdays, celebrations and your special moments even sweeter."
+  },
+
+  cookies: {
+    title: "FRESHLY BAKED COOKIES",
+    description:
+      "Delicious, comforting and freshly baked cookies made with quality ingredients and lots of love."
+  },
+
+  bentoCakes: {
+    title: "ADORABLE BENTO CAKES",
+    description:
+      "Small, beautiful and perfectly made cakes designed for sweet little celebrations and special moments."
+  }
+};
+
 export default function ProductCategories() {
+  const[selectedCategory,setSelectedCategory]=useState("ALL");
+  function handleSelect(category){
+    setSelectedCategory(category);
+  }
   return (
     <section className="productcategories">
 
@@ -53,9 +91,15 @@ export default function ProductCategories() {
       <div className="productcategories-filters-wrap">
         <ul className="productcategories-filters">
           {cakeCategories.map((items)=>(
-            <TabButton key={items.id} label={items.name} count={items.count} onSelect={items.tag} variant={items.variant}  />
+            <TabButton key={items.id} label={items.name} count={items.count} onSelect={()=>handleSelect(items.tag)} variant={items.variant} isSelected={selectedCategory==items.tag} />
           ))}
         </ul>
+      </div>
+      <div className="productcategories-display">
+        <div className="productcategories-display-header">
+          <h3>{categoryInfo[selectedCategory].title}</h3>
+          <p>{categoryInfo[selectedCategory].description}</p>
+        </div>
       </div>
 
     </section>
