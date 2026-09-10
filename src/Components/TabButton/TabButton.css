@@ -39,19 +39,23 @@
   border: 2px solid var(--color-brand-dark);
 }
 
-.tab-button:hover {
+/* .tab-button:hover {
   transform: translateY(-4px);
   box-shadow: 4px 4px 0 var(--color-brand-dark);
-}
+} */
 
 .tab-button-coral {
   background-color: #D7C6C3;
   color: #360203;
-
 }
 
 .tab-button-coral.active {
   box-shadow: 3px 3px 0 #360203;
+}
+
+.tab-button-coral:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0 #360203;
 }
 
 .tab-button-lightorange {
@@ -63,6 +67,11 @@
   box-shadow: 3px 3px 0 #7A2700;
 }
 
+.tab-button-lightorange:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0 #7A2700;
+}
+
 .tab-button-yellow {
   background-color: #ffe21b;
   color: #FF7435;
@@ -70,6 +79,11 @@
 
 .tab-button-yellow.active {
   box-shadow: 3px 3px 0 #FF7435;
+}
+
+.tab-button-yellow:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0 #FF7435;
 }
 
 .tab-button-lavender {
@@ -81,6 +95,11 @@
   box-shadow: 3px 3px 0 #4b3369;
 }
 
+.tab-button-lavender:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0 #4b3369;
+}
+
 .tab-button-light-aqua {
   background-color: #A5CED5;
   color: #02525D;
@@ -88,6 +107,11 @@
 
 .tab-button-light-aqua.active {
   box-shadow: 3px 3px 0 #02525D;
+}
+
+.tab-button-light-aqua:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0 #02525D;
 }
 
 
