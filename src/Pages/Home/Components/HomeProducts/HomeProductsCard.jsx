@@ -2,7 +2,7 @@ export default function HomeProductCard({ pic, tag, name, price }) {
   return (
     <article>
       <div className='image-container'>
-        <img src={pic} alt={tag} />
+        <img src={pic} alt={tag} loading="lazy"/>
       </div>
       <div className='product-info'>
         <h2>{name}</h2>
