@@ -1,6 +1,6 @@
 import Button from '../../../../Components/Button/Button';
 import "./Hero.css";
-import hero_img from '../../../../assets/hero-main.png';
+import hero_img from '../../../../assets/hero-main.webp';
 
 import {
   StarSpark,

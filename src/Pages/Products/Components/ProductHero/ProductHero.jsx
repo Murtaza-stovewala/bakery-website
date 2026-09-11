@@ -1,4 +1,4 @@
-import hero_img from "../../../../assets/Product-Hero.png";
+import hero_img from "../../../../assets/Product-Hero.webp";
 import Button from "../../../../Components/Button/Button";
 import "./ProductHero.css";
 import leafIcon from "../../../../assets/icons/leaf.svg";

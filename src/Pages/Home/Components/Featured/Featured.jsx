@@ -1,11 +1,11 @@
 import Button from '../../../../Components/Button/Button';
 import "./Featured.css";
-// import featured_img from '../../../../assets/Featured.png';
-import featured_img from '../../../../assets/Brownie-feaured.png';
-import featured_img2 from '../../../../assets/Featured-double-chocolate.png';
-import cookie from '../../../../assets/cookie.png';
+// import featured_img from '../../../../assets/Featured.webp';
+import featured_img from '../../../../assets/Brownie-feaured.webp';
+import featured_img2 from '../../../../assets/Featured-double-chocolate.webp';
+import cookie from '../../../../assets/cookie.webp';
 
-// import featured_img2 from '../../../../assets/Featured2.png';
+// import featured_img2 from '../../../../assets/Featured2.webp';
 
 
 import {

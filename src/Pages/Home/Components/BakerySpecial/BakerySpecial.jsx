@@ -8,10 +8,10 @@ import {
   HandCircle,
 } from "../../../../Components/doodles";
 
-import featured_img from "../../../../assets/Brownie-feaured.png";
-import featured_img2 from "../../../../assets/Featured-double-chocolate.png";
-import logo from "../../../../assets/Bakery-Logo.jpeg";
-import cookie from '../../../../assets/cookie.png';
+import featured_img from "../../../../assets/Brownie-feaured.webp";
+import featured_img2 from "../../../../assets/Featured-double-chocolate.webp";
+import logo from "../../../../assets/Bakery-Logo.webp";
+import cookie from '../../../../assets/cookie.webp';
 
 export default function BakerySpecial() {
   return (
