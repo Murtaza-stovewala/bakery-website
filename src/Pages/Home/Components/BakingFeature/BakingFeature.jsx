@@ -2,7 +2,7 @@ import { section } from "framer-motion/client";
 import Button from "../../../../Components/Button/Button";
 import "./BakingFeature.css";
 import { StarSpark, WheatDoodle, Squiggle } from "../../../../Components/doodles";
-import { img } from "../../../../Components/data";
+import { img } from "../../data";
 
 
 export default function BakingFeature() {

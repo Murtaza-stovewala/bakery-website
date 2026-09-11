@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { productsByCategory } from "../../../../Components/data";
+import { productsByCategory } from "../../data";
 import "./HomeProducts.css";
 import HomeProductCard from "./HomeProductsCard";
 
