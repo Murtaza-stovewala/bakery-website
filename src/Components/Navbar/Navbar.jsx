@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from '../../assets/Bakery-Logo.png';
 import "./Navbar.css";
 import Button from '../Button/Button';
@@ -10,36 +11,36 @@ return(
         <div className="navbar-container max-w-[1400px] h-[52px] mx-auto flex items-center justify-between">
 
         
-        <a src={logo} className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <img src={logo} alt="Bakery Logo" />
-        </a>
+        </Link>
 
         {/* Navigation */}
         <div className="navbar-links flex items-center gap-8">
-          <a href="/" className="nav-link">
+          <Link to="/" className="nav-link">
             HOME
-          </a>
+          </Link>
 
-          <a href="/products" className="nav-link nav-dropdown">
+          <Link to="/products" className="nav-link nav-dropdown">
             PRODUCTS
             <span className="dropdown-icon">⌄</span>
-          </a>
+          </Link>
 
-          <a href="/about" className="nav-link">
+          <Link to="/about" className="nav-link">
             ABOUT US
-          </a>
+          </Link>
 
           {/* <a href="/BAKERY" className="nav-link nav-dropdown">
             BAKERY
             <span className="dropdown-icon">⌄</span>
           </a> */}
 
-          <a href="/contact" className="nav-link">
+          <Link to="/contact" className="nav-link">
             CONTACT
-          </a>
-          <a href="/gallery" className="nav-link">
+          </Link>
+          <Link to="/gallery" className="nav-link">
             GALLERY
-          </a>
+          </Link>
         </div>
 
         {/* Actions */}
@@ -47,7 +48,7 @@ return(
           {/* <a href="/contact" className="start-baking">
             START BAKING
           </a> */}
-          <Button link="/contact" >Start Baking</Button>
+          <Button Link="/contact" >Start Baking</Button>
 
           <button className="cart-button" aria-label="View orders">
             🛍
