@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import TabButton from "../../../../Components/TabButton/TabButton";
 import "./ProductCategories.css";
 import { productsByCategory, cakeCategories, categoryInfo } from "../../data";
@@ -74,14 +75,29 @@ import ProductCard from "../ProductCard/ProductCard";
 // };
 
 export default function ProductCategories() {
-  const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const productsDisplayRef = useRef(null); 
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const categoryFromUrl = searchParams.get("category");
+  const initialCategory = categoryFromUrl && categoryInfo[categoryFromUrl] ? categoryFromUrl: "ALL";
+
+  // const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl || "ALL");
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   function handleSelect(category) {
     setSelectedCategory(category);
+    setSearchParams({});
   }
   /** @type {typeof productsByCategory[keyof typeof productsByCategory]} */
 
   const products = productsByCategory[selectedCategory] || [];
-
+  useEffect(() => {
+  if (categoryFromUrl && productsDisplayRef.current) {
+    productsDisplayRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}, [categoryFromUrl]);
 
   return (
     <section className="productcategories">
@@ -101,7 +117,7 @@ export default function ProductCategories() {
           ))}
         </ul>
       </div>
-      <div className="productcategories-display">
+      <div ref={productsDisplayRef} id="all-products" className="productcategories-display">
         <div className="productcategories-display-header">
           <h3>{categoryInfo[selectedCategory].title}</h3>
           <p>{categoryInfo[selectedCategory].description}</p>

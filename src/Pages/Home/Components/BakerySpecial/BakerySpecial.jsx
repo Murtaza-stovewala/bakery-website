@@ -37,9 +37,9 @@ export default function BakerySpecial() {
           <div className="bakery-special-header-action">
             <Squiggle className="bakery-special-squiggle" />
 
-            <Button>
-              <span>•</span>
-              SHOP NOW
+            <Button link="/products" >
+              <span>•</span> 
+               SHOP NOW
             </Button>
           </div>
 

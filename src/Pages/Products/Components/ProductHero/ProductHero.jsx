@@ -36,7 +36,13 @@ export default function ProductHero() {
                     made fresh with love, just for you.
                 </h3>
 
-                <Button>Explore Our Products</Button>
+                <Button
+                    OnClick={() => {
+                        document.getElementById("all-products")?.scrollIntoView({
+                            behavior: "smooth",
+                        });
+                    }}
+                >Explore Our Products</Button>
 
                 <div className="product-hero-highlights">
                     <div>

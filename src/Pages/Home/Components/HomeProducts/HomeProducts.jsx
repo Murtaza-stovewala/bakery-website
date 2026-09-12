@@ -16,6 +16,7 @@ import {
 } from "../../../../Components/doodles";
 
 import TabButton from "../../../../Components/TabButton/TabButton";
+import Button from "../../../../Components/Button/Button";
 
 const cakeCategories = [
   {
@@ -114,7 +115,7 @@ export default function HomeProducts() {
 
           <ul className="homeproducts-categories">
             {cakeCategories.map((category) => (
-              <TabButton key={category.id} label={category.name} count={category.count} variant={category.variant} onSelect={() =>handleCategoryChange(category.tag)} isSelected={selectedCategory==category.tag}/>
+              <TabButton key={category.id} label={category.name} count={category.count} variant={category.variant} onSelect={() => handleCategoryChange(category.tag)} isSelected={selectedCategory == category.tag} />
             ))}
           </ul>
         </div>
@@ -169,6 +170,10 @@ export default function HomeProducts() {
             →
           </button>
         )}
+
+      </div>
+      <div class="flex justify-center">
+        <Button className="align-middle" link="/products" ><span>•</span> See More </Button>
       </div>
 
       <div className="homeproducts-button"></div>

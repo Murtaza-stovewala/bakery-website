@@ -143,7 +143,7 @@ export default function Featured() {
           </div>
 
 
-          <Button>
+          <Button link="/products?category=brownies" >
            VIEW BROWNIES
           </Button>
 

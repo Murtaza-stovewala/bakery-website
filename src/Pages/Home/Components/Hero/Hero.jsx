@@ -41,7 +41,7 @@ export default function Hero() {
 
           <div className="hero-actions">
 
-            <Button link="/contact">
+            <Button link="/products" >
               EXPLORE MENU
             </Button>
 
